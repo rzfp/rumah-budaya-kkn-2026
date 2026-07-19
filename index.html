@@ -1,0 +1,541 @@
+<!doctype html>
+<html lang="id" class="dark-theme">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/jpeg" href="logo.jpg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rumah Budaya Watulimo - Living Culture Experience</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Jelajahi Rumah Budaya Watulimo di Trenggalek, Indonesia. Sebuah pusat kebudayaan modern yang melestarikan seni tradisional Jawa, tari Jaranan Turonggo Yakso, Karawitan, dan Wayang Kulit dalam bentuk pengalaman museum digital interaktif." />
+    <meta name="keywords" content="Rumah Budaya Watulimo, Watulimo, Trenggalek, Jaranan Turonggo Yakso, Museum Jawa, Kebudayaan Jawa, Karawitan, Wayang Kulit, Indonesia Cultural Center, Purwa, Beksan" />
+    <meta name="author" content="Rumah Budaya Watulimo" />
+    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Rumah Budaya Watulimo - Living Culture Experience" />
+    <meta property="og:description" content="Nikmati tur virtual, peta budaya interaktif, gamelan audio synthesizer, dan sejarah Watulimo dalam format premium digital museum." />
+    <meta property="og:image" content="https://images.unsplash.com/photo-1578926288207-a90a5366759d?q=80&w=1200&auto=format&fit=crop" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Premium Loading Screen -->
+    <div id="loading-screen" class="loading-screen flex-center flex-direction-column">
+      <div class="loading-logo-wrap">
+        <img src="logo.jpg" alt="Rumah Budaya Watulimo" class="loading-logo remove-black-bg" />
+        <div class="loading-spinner"></div>
+      </div>
+    </div>
+
+    <!-- Background Canvas Particles -->
+    <canvas id="particles-bg" class="particles-bg"></canvas>
+
+    <!-- Floating Navigation Navbar -->
+    <header class="navbar-container glass-panel">
+      <div class="nav-logo-group">
+        <img src="logo.jpg" alt="Rumah Budaya Watulimo Logo" class="nav-brand-logo remove-black-bg" />
+        <div>
+          <h1 class="nav-logo-title serif-text">WATULIMO</h1>
+          <span class="nav-logo-subtitle">RUMAH BUDAYA</span>
+        </div>
+      </div>
+
+      <!-- Desktop Navigation Menu -->
+      <nav class="desktop-nav">
+        <a href="#about" data-translate="nav.about">Tentang</a>
+        <a href="#history" data-translate="nav.history">Sejarah</a>
+        <a href="#structure" data-translate="nav.structure">Struktur</a>
+        <a href="#units" data-translate="nav.units">Unit Budaya</a>
+        <a href="#events" data-translate="nav.events">Kegiatan</a>
+        <a href="#gallery" data-translate="nav.gallery">Galeri</a>
+        <a href="#contact" data-translate="nav.contact">Hubungi</a>
+      </nav>
+
+      <!-- Nav Action Toolbar -->
+      <div class="nav-actions">
+        <!-- Smart Search Trigger -->
+        <button class="nav-btn" id="search-trigger-btn" title="Search">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        </button>
+
+        <!-- QR Code Gate Check-In -->
+        <button class="nav-btn" id="qr-trigger-btn" title="QR Code Access">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+        </button>
+
+        <!-- Printable Company Profile PDF -->
+        <div class="download-btn-container">
+          <button class="nav-btn" id="download-profile-btn" title="Download Profile">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+          </button>
+          <div id="download-tooltip" class="download-tooltip-box glass-panel hide">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
+            <span>Preparing printable profile...</span>
+          </div>
+        </div>
+
+        <!-- Light/Dark Mode Switcher -->
+        <button class="nav-btn" id="theme-toggle-btn" title="Toggle Theme">
+          <svg id="theme-sun-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="hide"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+          <svg id="theme-moon-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+        </button>
+
+        <!-- Multi Language Selector -->
+        <div class="lang-dropdown-container">
+          <button class="nav-btn lang-btn" id="lang-menu-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+            <span class="lang-label" id="current-lang-label">ID</span>
+          </button>
+          <div class="lang-dropdown-menu glass-panel">
+            <button class="lang-opt" data-lang="en"><span>EN - English</span></button>
+            <button class="lang-opt active" data-lang="id"><span>ID - Indonesia</span></button>
+            <button class="lang-opt" data-lang="jv"><span>JV - Jowo</span></button>
+          </div>
+        </div>
+
+        <!-- Mobile Responsive Menu -->
+        <button class="mobile-menu-toggle nav-btn" id="mobile-menu-toggle-btn">
+          <svg id="mobile-menu-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+          <svg id="mobile-close-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="hide"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
+      </div>
+    </header>
+
+    <!-- Mobile Navigation Drawer Overlay -->
+    <div class="mobile-nav-overlay glass-panel hide" id="mobile-nav-overlay-panel">
+      <div class="mobile-nav-header text-center">
+        <img src="logo.jpg" alt="Rumah Budaya Watulimo Logo" class="mobile-brand-logo remove-black-bg" />
+        <h3 class="serif-text">WATULIMO</h3>
+        <span class="mobile-brand-subtitle">RUMAH BUDAYA</span>
+      </div>
+      <nav class="mobile-nav-links">
+        <a href="#about" data-translate="nav.about">Tentang</a>
+        <a href="#history" data-translate="nav.history">Sejarah</a>
+        <a href="#structure" data-translate="nav.structure">Struktur</a>
+        <a href="#units" data-translate="nav.units">Unit Budaya</a>
+        <a href="#events" data-translate="nav.events">Kegiatan</a>
+        <a href="#gallery" data-translate="nav.gallery">Galeri</a>
+        <a href="#contact" data-translate="nav.contact">Hubungi</a>
+      </nav>
+    </div>
+
+    <!-- Smart Search Overlay Modal -->
+    <div class="search-overlay-wrapper flex-center hide" id="search-overlay-panel">
+      <div class="search-overlay-content glass-panel">
+        <div class="search-overlay-header">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--accent-gold)" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          <input type="text" id="smart-search-input" placeholder="Cari unit budaya, sejarah, pengurus..." />
+          <button class="search-close-btn" id="search-close-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+          </button>
+        </div>
+        <div class="search-results-viewport hide" id="search-results-viewport">
+          <span class="results-label">MUSEUM ARCHIVES MATCHES</span>
+          <div class="results-list" id="search-results-list"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Check-In QR Modal -->
+    <div class="qr-overlay-wrapper flex-center hide" id="qr-overlay-panel">
+      <div class="qr-content-card glass-panel">
+        <button class="qr-close-btn" id="qr-close-btn">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
+        <h3 class="serif-text">Digital Museum Check-In</h3>
+        <p>Scan barcode ini saat Anda berkunjung ke Rumah Budaya Watulimo di Desa Watulimo untuk mengakses panduan audio secara instan.</p>
+        <svg viewBox="0 0 100 100" class="qr-svg-vector">
+          <rect width="100" height="100" fill="transparent" />
+          <rect x="10" y="10" width="25" height="25" fill="none" stroke="var(--accent-gold)" stroke-width="3" />
+          <rect x="15" y="15" width="15" height="15" fill="var(--accent-gold)" />
+          <rect x="65" y="10" width="25" height="25" fill="none" stroke="var(--accent-gold)" stroke-width="3" />
+          <rect x="70" y="15" width="15" height="15" fill="var(--accent-gold)" />
+          <rect x="10" y="65" width="25" height="25" fill="none" stroke="var(--accent-gold)" stroke-width="3" />
+          <rect x="15" y="65" width="15" height="15" fill="var(--accent-gold)" />
+          <rect x="45" y="20" width="8" height="8" fill="var(--accent-gold)" />
+          <rect x="45" y="45" width="12" height="12" fill="var(--accent-gold)" />
+          <rect x="20" y="45" width="6" height="6" fill="var(--accent-gold)" />
+          <rect x="75" y="45" width="10" height="10" fill="var(--accent-gold)" />
+          <rect x="65" y="65" width="8" height="8" fill="var(--accent-gold)" />
+          <rect x="70" y="78" width="12" height="12" fill="var(--accent-gold)" />
+        </svg>
+        <code>RBW-PASS-2026</code>
+      </div>
+    </div>
+
+    <!-- 1. Hero Section -->
+    <section class="hero-viewport flex-center">
+      <div class="hero-dark-overlay"></div>
+      
+      <!-- Video / Picture Slideshow container -->
+      <div class="hero-video-mock">
+        <img 
+          src="https://images.unsplash.com/photo-1590073844006-33379778ae09?q=80&w=1920&auto=format&fit=crop" 
+          alt="Jaranan Dancer" 
+          class="hero-fallback-image animate-kenburns"
+          id="hero-slideshow-img"
+        />
+      </div>
+
+      <div class="hero-text-content text-center">
+        <span class="hero-tagline" data-translate="hero.tagline">Merawat Tradisi, Menginspirasi Generasi</span>
+        <h2 class="hero-title serif-text" data-translate="hero.title">Rumah Budaya Watulimo</h2>
+        <p class="hero-subtitle" id="hero-desc-translate" data-translate="hero.description">Rumah Budaya Watulimo merupakan pusat pelestarian dan pengembangan seni budaya di Desa Watulimo, Trenggalek.</p>
+        
+        <div class="hero-btn-row">
+          <a href="#about" class="btn-primary hero-cta flex-center gap-10">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+            <span data-translate="hero.btnExplore">Jelajahi Budaya</span>
+          </a>
+          <a href="#events" class="btn-secondary hero-cta-sec" data-translate="hero.btnEvents">Lihat Kegiatan</a>
+          <a href="#gallery" class="btn-secondary hero-cta-sec" data-translate="hero.btnDoc">Dokumentasi</a>
+        </div>
+      </div>
+
+      <!-- Background gamelan synthesize controller -->
+      <div class="floating-ambient-gamelan glass-panel" id="gamelan-synth-widget">
+        <div class="ambient-header">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18V5l12-2v13"></path><circle cx="6" cy="18" r="3"></circle><circle cx="18" cy="16" r="3"></circle></svg>
+          <span data-translate="gamelan.title">Gamelan Synth</span>
+        </div>
+        <div class="ambient-controls">
+          <button class="ambient-play-btn" id="ambient-toggle-btn" title="Toggle Background Gamelan">
+            <svg id="ambient-play-icon" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+            <svg id="ambient-pause-icon" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="hide"><rect x="6" y="4" width="4" height="16"></rect><rect x="14" y="4" width="4" height="16"></rect></svg>
+          </button>
+          <input type="range" min="0" max="1" step="0.05" value="0.4" id="volume-slider" class="mini-volume" />
+        </div>
+        <div class="mini-keyboard-keys" id="mini-saron-keys"></div>
+      </div>
+
+      <div class="hero-bottom-badge">
+        <svg class="compass-spin" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon></svg>
+        <span>WATULIMO // TRENGGALEK // INDONESIA</span>
+      </div>
+    </section>
+
+    <!-- 2. About Rumah Budaya Section -->
+    <section id="about" class="section-padding">
+      <div class="about-grid">
+        <div class="about-text-panel">
+          <span class="section-badge" data-translate="about.badge">Living Culture Experience</span>
+          <h2 class="serif-text" data-translate="about.title">Gerakan Seni & Tradisi Watulimo</h2>
+          <p id="about-text-desc" data-translate="about.desc">Rumah Budaya Watulimo didirikan sebagai episentrum pelestarian kesenian pesisir Trenggalek. Kami percaya bahwa tradisi bukanlah benda mati di etalase, melainkan denyut kehidupan yang berkembang bersama zaman.</p>
+          
+          <div class="vision-mission-cards">
+            <div class="info-inline-card glass-panel">
+              <h4 class="serif-text">Visi Kami</h4>
+              <p>Menjadi mercusuar kebudayaan Jawa pesisiran yang diakui secara internasional dengan melestarikan tradisi melalui teknologi inovasi.</p>
+            </div>
+            <div class="info-inline-card glass-panel">
+              <h4 class="serif-text">Misi Kami</h4>
+              <p>Menyelenggarakan pelatihan tari, pedalangan, karawitan, jaranan, serta melakukan digitalisasi manuskrip kuno demi generasi penerus.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="about-widget-panel">
+          <!-- Weather in Watulimo and Visitor Counter -->
+          <div class="widget-card glass-card">
+            <div class="weather-widget-header">
+              <h4 class="serif-text">Watulimo Live Weather</h4>
+              <div class="weather-icon-sun">☀️</div>
+            </div>
+            <div class="weather-details">
+              <span class="temp-val" id="weather-temp">29°C</span>
+              <span class="weather-desc">Cerah Berawan / Marine Breeze</span>
+            </div>
+            <div class="weather-meta">
+              <code>COORD // 8.2709° S, 111.7214° E</code>
+            </div>
+          </div>
+
+          <div class="widget-card glass-card visitor-widget">
+            <h4 class="serif-text">Museum Digital Entrance</h4>
+            <div class="visitor-counter-wrap">
+              <span class="visitor-number" id="visitor-count-number">24532</span>
+              <span class="visitor-label">Total Pengunjung Terdaftar</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. History of Watulimo Village -->
+    <section id="history-village" class="section-padding">
+      <div class="history-intro">
+        <div class="title-with-icon">
+          <svg class="accent-color-icon animate-float" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+          <h2 data-translate="history.villageTitle">Sejarah Desa Watulimo</h2>
+        </div>
+      </div>
+
+      <div class="history-narrative-grid">
+        <div class="narrative-card glass-panel">
+          <h3 class="serif-text">Babad Sela Gangsal (Legenda Lima Batu)</h3>
+          <p id="village-text-1">Terletak di antara perbukitan selatan Trenggalek yang terjal dan Samudra Hindia, Watulimo adalah tanah penuh legenda. Namanya yang berarti 'lima batu', merujuk pada formasi batuan kuno pembatas mistis kerajaan Jawa.</p>
+        </div>
+        <div class="narrative-card glass-panel">
+          <h3 class="serif-text">Asal Usul & Kebudayaan Pesisiran</h3>
+          <p id="village-text-2">Secara historis merupakan tempat perlindungan bagi prajurit Pangeran Diponegoro, wilayah ini berkembang menjadi wadah peleburan budaya di mana pengaruh pesisir bertemu dengan keraton Yogyakarta dan Surakarta, melahirkan kesenian unik seperti Jaranan Turonggo Yakso.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. History of Rumah Budaya Watulimo -->
+    <section id="history" class="section-padding">
+      <div class="timeline-intro">
+        <h2 class="serif-text" data-translate="history.centerTitle">Sejarah Rumah Budaya Watulimo</h2>
+        <p class="timeline-sub">Rekam jejak pelestarian tradisi dari pendopo kayu sederhana hingga pusat warisan budaya diakui kancah nasional.</p>
+      </div>
+
+      <div class="interactive-timeline-slider glass-panel">
+        <div class="timeline-track-wrapper">
+          <div class="timeline-track-bar">
+            <div class="timeline-track-progress" id="timeline-track-progress" style="width: 0%;"></div>
+          </div>
+          <div class="timeline-milestones-row" id="timeline-years-row"></div>
+        </div>
+
+        <div class="milestone-details-viewport" id="timeline-viewport">
+          <div class="milestone-watermark-year" id="timeline-watermark">1998</div>
+          <div class="milestone-detail-card">
+            <span class="milestone-card-year">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+              <span id="milestone-active-year">1998</span>
+            </span>
+            <h4 class="serif-text" id="milestone-active-title">Pendopo Pertama</h4>
+            <p id="milestone-active-desc">Dibangun menggunakan kayu jati tua, dimulai dengan satu set gamelan.</p>
+            <div class="milestone-indicator-footer">
+              <span>Milestone <span id="milestone-active-index">1</span> of 5</span>
+              <svg class="chevron-pulse" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. Organizational Structure -->
+    <section id="structure" class="section-padding">
+      <div class="structure-intro text-center">
+        <h2 class="serif-text" data-translate="structure.title">Struktur Organisasi</h2>
+        <p class="subtitle">Bagan interaktif kepengurusan Rumah Budaya Watulimo</p>
+      </div>
+
+      <div class="structure-visual-layout glass-panel">
+        <div class="hierarchy-nodes-tree" id="hierarchy-tree-chart">
+          <!-- Tree is generated dynamically by app.js based on hierarchy data -->
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. Management Profiles (Biography exhibit details) -->
+    <section id="profiles" class="section-padding">
+      <div class="profiles-header text-center">
+        <h2 class="serif-text" data-translate="profiles.title">Profil Pengurus Inti & Dewan</h2>
+        <p class="subtitle">Detail dedikasi, kontribusi, dan biografi tokoh adat rumah budaya</p>
+      </div>
+
+      <div class="profile-details-viewer-box" id="profile-details-viewport">
+        <!-- Renders automatically upon clicking any node in the organizational chart -->
+      </div>
+    </section>
+
+    <!-- 7. Cultural Units Grid -->
+    <section id="units" class="section-padding">
+      <div class="units-header text-center">
+        <h2 class="serif-text" data-translate="units.title">Unit Kebudayaan</h2>
+        <p class="subtitle">10 Bidang pendidikan tradisi adiluhung Rumah Budaya Watulimo</p>
+      </div>
+
+      <div class="units-masonry-grid" id="units-cards-container">
+        <!-- 10 Cultural cards injected via app.js -->
+      </div>
+    </section>
+
+    <!-- 8. Events and Activities Segment -->
+    <section id="events" class="section-padding">
+      <div class="events-intro-header">
+        <div>
+          <h2 class="serif-text" data-translate="events.title">Jadwal & Agenda Kegiatan</h2>
+          <p class="subtitle">Ikuti lokakarya tradisi, ritual adat bersih desa, dan pentas jaranan</p>
+        </div>
+        
+        <!-- Live Countdown Widget -->
+        <div class="countdown-widget-container glass-panel">
+          <span class="countdown-label">LARUNG SEMBONYO COUNTDOWN</span>
+          <div class="countdown-digits" id="sembonyo-countdown-clock">
+            <div class="time-block"><span id="cd-days">00</span><code>D</code></div>
+            <div class="time-block"><span id="cd-hours">00</span><code>H</code></div>
+            <div class="time-block"><span id="cd-minutes">00</span><code>M</code></div>
+            <div class="time-block"><span id="cd-seconds">00</span><code>S</code></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Events Category Tab filters -->
+      <div class="events-tab-row flex-center">
+        <button class="event-tab-btn active" data-event-cat="all">Semua Kegiatan</button>
+        <button class="event-tab-btn" data-event-cat="events">Acara Penting (Events)</button>
+        <button class="event-tab-btn" data-event-cat="routine">Kegiatan Rutin</button>
+        <button class="event-tab-btn" data-event-cat="future">Program Mendatang</button>
+      </div>
+
+      <div class="events-calendar-viewport" id="events-list-container">
+        <!-- Injected list of agenda items -->
+      </div>
+
+      <!-- Access Ticket Modal -->
+      <div class="booking-modal-overlay flex-center hide" id="booking-modal">
+        <div class="booking-modal-content glass-panel" id="booking-modal-body"></div>
+      </div>
+    </section>
+
+    <!-- 9. Achievements Segment -->
+    <section id="achievements" class="section-padding">
+      <div class="achievements-intro text-center">
+        <h2 class="serif-text">Prestasi & Piagam Penghargaan</h2>
+        <p class="subtitle">Dedikasi puluhan tahun melestarikan kebudayaan Trenggalek di kancah nasional</p>
+      </div>
+
+      <!-- Stats counter wrap -->
+      <div class="achievements-stats-grid">
+        <div class="stat-node glass-panel">
+          <span class="stat-number" id="stats-awards">0</span>
+          <span class="stat-label">Kejuaraan & Piagam</span>
+        </div>
+        <div class="stat-node glass-panel">
+          <span class="stat-number" id="stats-years">0</span>
+          <span class="stat-label">Tahun Pengabdian</span>
+        </div>
+        <div class="stat-node glass-panel">
+          <span class="stat-number" id="stats-members">0</span>
+          <span class="stat-label">Siswa & Cantrik Aktif</span>
+        </div>
+      </div>
+
+      <div class="awards-masonry-list" id="awards-list-container"></div>
+    </section>
+
+    <!-- 10. Masonry Gallery Segment -->
+    <section id="gallery" class="section-padding">
+      <div class="gallery-intro-bar">
+        <div>
+          <h2 class="serif-text" data-translate="gallery.title">Galeri Pusaka & Dokumentasi</h2>
+          <p class="subtitle">Arsip visual aktivitas seni, pewayangan, tari, dan kerajinan batik</p>
+        </div>
+        <!-- Search bar inside gallery -->
+        <div class="gallery-search-wrap glass-panel">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          <input type="text" id="gallery-search-input" placeholder="Cari foto..." />
+        </div>
+      </div>
+
+      <!-- Filters -->
+      <div class="gallery-filters flex-center" id="gallery-filters-row">
+        <!-- Filters injected via app.js -->
+      </div>
+
+      <div class="gallery-masonry-grid" id="gallery-grid-container"></div>
+    </section>
+
+    <!-- Fullscreen Image Lightbox Overlay Portal -->
+    <div class="lightbox-overlay flex-center hide" id="gallery-lightbox"></div>
+
+    <!-- 11. Contact Section (Updated Address & Numbers) -->
+    <section id="contact" class="section-padding">
+      <div class="contact-intro text-center">
+        <h2 class="serif-text" data-translate="contact.title">Hubungi Kami</h2>
+        <p class="subtitle">Kunjungi Rumah Budaya Watulimo di Trenggalek atau daftarkan diri Anda sebagai siswa/cantrik</p>
+      </div>
+
+      <div class="contact-layout-box">
+        <div class="contact-details-cards">
+          <!-- Address card -->
+          <div class="contact-info-card glass-card">
+            <div class="info-card-icon">📍</div>
+            <div class="info-card-body">
+              <h4>Alamat Lengkap</h4>
+              <p>Jl. Raya Bandung Prigi Rumah Budaya Watulimo, QPG8+C3J, Watulimo, Kec. Watulimo, Kabupaten Trenggalek, Jawa Timur 66382, Indonesia</p>
+            </div>
+          </div>
+
+          <!-- Phone lines card -->
+          <div class="contact-info-card glass-card">
+            <div class="info-card-icon">📞</div>
+            <div class="info-card-body">
+              <h4>Narahubung & Kontak</h4>
+              <p>Sudewo (+62 813-3130-6689)</p>
+              <p>Andri (+62 858-9546-5155)</p>
+            </div>
+          </div>
+
+          <!-- Hours card -->
+          <div class="contact-info-card glass-card">
+            <div class="info-card-icon">⏰</div>
+            <div class="info-card-body">
+              <h4>Jam Operasional Museum</h4>
+              <p>Senin - Minggu (Buka Setiap Hari)</p>
+              <p>08.00 - 16.00 WIB</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Interactive Map and Message panel -->
+        <div class="contact-forms-grid">
+          <div class="location-map-wrap glass-panel" id="location-map-viewport">
+            <!-- Custom interactive map vector is injected here by app.js -->
+          </div>
+          
+          <div class="message-sender-wrap glass-panel" id="message-form-container">
+            <!-- Message form is injected here by app.js -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 12. Museum Footer -->
+    <footer class="museum-footer glass-panel">
+      <div class="footer-top-row">
+        <div class="footer-brand">
+          <img src="logo.jpg" alt="Rumah Budaya Watulimo Logo" class="footer-brand-logo remove-black-bg" />
+          <h3 class="serif-text">Rumah Budaya Watulimo</h3>
+          <p class="footer-address">
+            Desa Watulimo<br>
+            Kecamatan Watulimo<br>
+            Kabupaten Trenggalek<br>
+            East Java<br>
+            Indonesia
+          </p>
+        </div>
+        
+        <div class="footer-sharing-meta">
+          <span>Bagikan Portal:</span>
+          <div class="share-icon-buttons">
+            <button class="share-btn-mock" id="share-wa" title="Share via WhatsApp">💬 WA</button>
+            <button class="share-btn-mock" id="share-fb" title="Share via Facebook">📘 FB</button>
+            <button class="share-btn-mock" id="share-x" title="Share via X">🐦 X</button>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom-row">
+        <span>© 2026 Rumah Budaya Watulimo. All rights reserved.</span>
+        <span>Trenggalek Regency Javanese Heritage Preservation.</span>
+      </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top-btn hide" id="back-to-top-trigger" title="Back to Top">▲</button>
+
+    <!-- Printable Only Wrapper for Profile PDF Downloads -->
+    <div class="printable-only" id="printable-company-profile"></div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
