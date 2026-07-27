@@ -167,23 +167,10 @@ const orgStructureData = {
     { id: "camat", name: "Camat Kecamatan Watulimo", role: "Penanggung Jawab", bio: "Kepala pemerintahan Kecamatan Watulimo yang mengoordinasikan koordinasi antar-instansi daerah.", dedication: "Sejak menjabat", contribution: "Fasilitator perizinan pentas seni pesisir, promosi wisata kecamatan." },
     { id: "kades", name: "Kepala Desa Watulimo", role: "Penanggung Jawab", bio: "Kepala desa Watulimo yang mengalokasikan dana desa untuk operasional fisik Rumah Budaya Watulimo.", dedication: "Sejak menjabat", contribution: "Pemberdayaan sanggar desa, fasilitator sarana Pendopo." }
   ],
-  dewanPenasehat: [
-    { id: "ridwan", name: "Ir. H. M. Ridwan Hisjam", role: "Ketua Dewan Penasehat", bio: "Tokoh nasional senior dan pemerhati budaya yang membina arah strategis jangka panjang Rumah Budaya.", dedication: "10 Tahun Pengabdian", contribution: "Koneksi jejaring nasional, pembina visi kebudayaan, bantuan fasilitas." }
-  ],
   pengurusInti: [
     { id: "andri", name: "Andri Sudarsono, SA", role: "Ketua Pengurus Inti", bio: "Pemimpin visioner penggerak pemuda Watulimo yang mengelola operasional harian seluruh unit kebudayaan.", dedication: "8 Tahun Pengabdian", contribution: "Digitalisasi museum, manajemen kurator, koordinator kemitraan internasional." },
     { id: "roro-pengurus", name: "Roro Riwayatiningsih, S.Pd", role: "Sekretaris Pengurus Inti", bio: "Tenaga administrasi yang menyusun agenda latihan, registrasi anggota, dan dokumentasi rapat, sekaligus menjembatani koordinasi dengan Dewan Adat.", dedication: "15 Tahun Pengabdian", contribution: "Pengarsipan arsip sejarah, manajemen korespondensi publik." },
     { id: "wini", name: "Wini Kumaidah, S.Tr Keb", role: "Bendahara Pengurus Inti", bio: "Tenaga profesional yang mengawasi arus keuangan, transparansi dana hibah, dan pendaftaran siswa beasiswa gratis.", dedication: "5 Tahun Pengabdian", contribution: "Tata kelola anggaran pelatihan, pengawasan transparansi donasi." }
-  ],
-  dewanPakar: [
-    { id: "gunaris", name: "Gunaris, S.T., MBA, MSc-Fin., CFA, CEM.", role: "Ketua Dewan Pakar", bio: "Ahli ekonomi keuangan dan keberlanjutan yang memformulasikan model kemandirian finansial pariwisata cagar budaya.", dedication: "7 Tahun Pengabdian", contribution: "Analisis studi kelayakan ekonomi kreatif, perencanaan dana abadi." },
-    { id: "firman", name: "Dr. H. Firman Arifin, ST, MT.", role: "Anggota Dewan Pakar", bio: "Akademisi bidang teknik instrumentasi yang mendukung riset digitalisasi suara gamelan dan multimedia imersif.", dedication: "4 Tahun Pengabdian", contribution: "Konsultasi teknologi audio-visual virtual tour." },
-    { id: "munta", name: "Dr. H. M. Muntahibun Nafis, MA.", role: "Anggota Dewan Pakar", bio: "Akademisi kebudayaan yang mengkaji makna filosofis luhur di balik ritus spiritual Larung Sembonyo.", dedication: "5 Tahun Pengabdian", contribution: "Penerbitan jurnal riset kebudayaan lokal Watulimo." },
-    { id: "ibnu", name: "Dr. H. Ibnu Burdah, MA.", role: "Anggota Dewan Pakar", bio: "Pakar sejarah antropologi yang mendalami silsilah migrasi leluhur Watulimo dan pengaruh kerajaan Mataram.", dedication: "5 Tahun Pengabdian", contribution: "Kurasi narasi sejarah Babad Watulimo." },
-    { id: "andy", name: "Ir. Andy Widiatmoko, MSc.", role: "Anggota Dewan Pakar", bio: "Insinyur perencanaan wilayah tata kota yang membantu zonasi pengembangan Rumah Budaya sebagai destinasi internasional.", dedication: "6 Tahun Pengabdian", contribution: "Zonasi fisik cagar budaya, lanskap arsitektur hijau." },
-    { id: "arif", name: "Arif Budiono, S.T", role: "Anggota Dewan Pakar", bio: "Pakar sistem informasi yang merancang implementasi server database cagar budaya lokal.", dedication: "3 Tahun Pengabdian", contribution: "Infrastruktur cloud arsip digital." },
-    { id: "iin", name: "Iin Budiono, S.T", role: "Anggota Dewan Pakar", bio: "Praktisi teknik sipil pengawas kekuatan struktur bangunan joglo cagar budaya.", dedication: "3 Tahun Pengabdian", contribution: "Restorasi kayu pendopo penahan gempa." },
-    { id: "gunawan", name: "Gunawan Wibisono, S.T", role: "Anggota Dewan Pakar", bio: "Pakar kelistrikan dan otomasi yang menyusun sistem pencahayaan artistik galeri pameran.", dedication: "4 Tahun Pengabdian", contribution: "Pencahayaan terarah lampu sorot shadow play." }
   ],
   dewanAdat: [
     { id: "bambang", name: "Bambang Sudewo, S.Pd", role: "Ketua Dewan Adat", bio: "Sesepuh adat karismatik watulimo pelatih agung Jaranan Turonggo Yakso yang menjaga orisinalitas pakem ritual.", dedication: "20+ Tahun Pengabdian", contribution: "Penyusunan modul koreografi Turonggo Yakso, pemandu ritual." },
@@ -675,7 +662,7 @@ function initOrgTreeChart() {
   const treeContainer = document.getElementById("hierarchy-tree-chart");
   if (!treeContainer) return;
 
-  // Build tree chart layers: Penanggung Jawab -> Dewan Penasehat -> Pengurus Inti -> Pakar & Adat Row
+  // Build tree chart layers: Penanggung Jawab -> Pengurus Inti -> Dewan Adat Row
   let treeHTML = `
     <!-- Layer 1: Penanggung Jawab -->
     <div class="tree-row">
@@ -693,23 +680,7 @@ function initOrgTreeChart() {
     
     <div class="tree-connector-v"></div>
 
-    <!-- Layer 2: Dewan Penasehat -->
-    <div class="tree-row">
-  `;
-  orgStructureData.dewanPenasehat.forEach(node => {
-    treeHTML += `
-      <div class="tree-card-node" data-profile-id="${node.id}">
-        <h5>${node.role}</h5>
-        <h4>${node.name}</h4>
-      </div>
-    `;
-  });
-  treeHTML += `
-    </div>
-
-    <div class="tree-connector-v"></div>
-
-    <!-- Layer 3: Pengurus Inti -->
+    <!-- Layer 2: Pengurus Inti -->
     <div class="tree-row">
   `;
   orgStructureData.pengurusInti.forEach(node => {
@@ -725,13 +696,8 @@ function initOrgTreeChart() {
 
     <div class="tree-connector-v"></div>
 
-    <!-- Layer 4: Expandable Headers for Dewan Pakar and Dewan Adat -->
+    <!-- Layer 3: Expandable Header for Dewan Adat -->
     <div class="tree-row" style="gap: 80px;">
-      <div class="tree-card-node" id="pakar-expand-btn">
-        <h5>Dewan Penasehat Keahlian</h5>
-        <h4>Dewan Pakar</h4>
-        <span style="font-size: 0.68rem; color: var(--text-tertiary);">Click to view members (${orgStructureData.dewanPakar.length})</span>
-      </div>
       <div class="tree-card-node" id="adat-expand-btn">
         <h5>Mpu Kebudayaan</h5>
         <h4>Dewan Adat</h4>
@@ -739,27 +705,12 @@ function initOrgTreeChart() {
       </div>
     </div>
 
-    <!-- Expandable Pakar Row -->
-    <div class="tree-connector-v pakar-row-node hide"></div>
-    <div class="tree-row hide pakar-row-node" style="flex-wrap: wrap; max-width: 900px; gap: 12px;" id="pakar-nodes-container"></div>
-
     <!-- Expandable Adat Row -->
     <div class="tree-connector-v adat-row-node hide"></div>
     <div class="tree-row hide adat-row-node" style="flex-wrap: wrap; max-width: 900px; gap: 12px;" id="adat-nodes-container"></div>
   `;
 
   treeContainer.innerHTML = treeHTML;
-
-  // Render pakar members inside container
-  const pakarContainer = document.getElementById("pakar-nodes-container");
-  orgStructureData.dewanPakar.forEach(node => {
-    pakarContainer.innerHTML += `
-      <div class="tree-card-node" data-profile-id="${node.id}" style="padding: 10px 14px; min-width: 150px;">
-        <h5>${node.role}</h5>
-        <h4>${node.name}</h4>
-      </div>
-    `;
-  });
 
   // Render adat members inside container
   const adatContainer = document.getElementById("adat-nodes-container");
@@ -770,12 +721,6 @@ function initOrgTreeChart() {
         <h4>${node.name}</h4>
       </div>
     `;
-  });
-
-  // Bind Pakar Expand click
-  document.getElementById("pakar-expand-btn").addEventListener("click", () => {
-    document.querySelectorAll(".pakar-row-node").forEach(el => el.classList.toggle("hide"));
-    document.getElementById("pakar-expand-btn").classList.toggle("active");
   });
 
   // Bind Adat Expand click
@@ -1394,12 +1339,9 @@ function initGlobalControls() {
         searchModal.classList.add("hide");
         if (m.link === "#profiles") {
           // If it was a profile, make sure it is selected in tree
-          const matchProfile = orgStructureData.penanggungJawab.concat(orgStructureData.dewanPenasehat, orgStructureData.pengurusInti, orgStructureData.dewanPakar, orgStructureData.dewanAdat).find(p => p.name === m.label);
+          const matchProfile = orgStructureData.penanggungJawab.concat(orgStructureData.pengurusInti, orgStructureData.dewanAdat).find(p => p.name === m.label);
           if (matchProfile) {
-            // Expand pakar/adat rows if they clicked one
-            if (orgStructureData.dewanPakar.some(p => p.id === matchProfile.id)) {
-              document.querySelectorAll(".pakar-row-node").forEach(el => el.classList.remove("hide"));
-            }
+            // Expand adat row if they clicked one of its members
             if (orgStructureData.dewanAdat.some(p => p.id === matchProfile.id)) {
               document.querySelectorAll(".adat-row-node").forEach(el => el.classList.remove("hide"));
             }
@@ -1494,9 +1436,6 @@ function compilePrintablePDF() {
     <ul>
   `;
   orgStructureData.penanggungJawab.forEach(p => {
-    contentHTML += `<li><strong>${p.role}:</strong> ${p.name} (Dedikasi: ${p.dedication})</li>`;
-  });
-  orgStructureData.dewanPenasehat.forEach(p => {
     contentHTML += `<li><strong>${p.role}:</strong> ${p.name} (Dedikasi: ${p.dedication})</li>`;
   });
   orgStructureData.pengurusInti.forEach(p => {
