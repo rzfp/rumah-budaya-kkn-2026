@@ -163,9 +163,8 @@ const milestones = [
 
 const orgStructureData = {
   penanggungJawab: [
-    { id: "bupati", name: "Bupati Kabupaten Trenggalek", role: "Penanggung Jawab", bio: "Pimpinan tertinggi pemerintahan daerah Kabupaten Trenggalek yang mengayomi seluruh inisiatif pelestarian budaya lokal.", dedication: "Sejak menjabat", contribution: "State sponsorship, kebijakan pelestarian, pendanaan hibah pariwisata." },
-    { id: "wabup", name: "Wakil Bupati Kabupaten Trenggalek", role: "Penanggung Jawab", bio: "Wakil pimpinan pemerintahan daerah yang menyelaraskan pariwisata budaya dengan kesejahteraan desa.", dedication: "Sejak menjabat", contribution: "Penyelarasan program kerja dinas pariwisata, monitoring cagar budaya." },
-    { id: "camat", name: "Camat Watulimo", role: "Penanggung Jawab", bio: "Kepala pemerintahan Kecamatan Watulimo yang mengoordinasikan koordinasi antar-instansi daerah.", dedication: "Sejak menjabat", contribution: "Fasilitator perizinan pentas seni pesisir, promosi wisata kecamatan." },
+    { id: "bupati", name: "Bupati dan Wakil Bupati Kabupaten Trenggalek", role: "Penanggung Jawab", bio: "Pimpinan tertinggi pemerintahan daerah Kabupaten Trenggalek yang mengayomi seluruh inisiatif pelestarian budaya lokal.", dedication: "Sejak menjabat", contribution: "State sponsorship, kebijakan pelestarian, pendanaan hibah pariwisata." },
+    { id: "camat", name: "Camat Kecamatan Watulimo", role: "Penanggung Jawab", bio: "Kepala pemerintahan Kecamatan Watulimo yang mengoordinasikan koordinasi antar-instansi daerah.", dedication: "Sejak menjabat", contribution: "Fasilitator perizinan pentas seni pesisir, promosi wisata kecamatan." },
     { id: "kades", name: "Kepala Desa Watulimo", role: "Penanggung Jawab", bio: "Kepala desa Watulimo yang mengalokasikan dana desa untuk operasional fisik Rumah Budaya Watulimo.", dedication: "Sejak menjabat", contribution: "Pemberdayaan sanggar desa, fasilitator sarana Pendopo." }
   ],
   dewanPenasehat: [
@@ -173,8 +172,8 @@ const orgStructureData = {
   ],
   pengurusInti: [
     { id: "andri", name: "Andri Sudarsono, SA", role: "Ketua Pengurus Inti", bio: "Pemimpin visioner penggerak pemuda Watulimo yang mengelola operasional harian seluruh unit kebudayaan.", dedication: "8 Tahun Pengabdian", contribution: "Digitalisasi museum, manajemen kurator, koordinator kemitraan internasional." },
-    { id: "ayu", name: "Ayu Lucky Setiani", role: "Sekretaris Pengurus Inti", bio: "Tenaga administrasi ahli yang menyusun agenda latihan, registrasi anggota, dan dokumentasi rapat.", dedication: "5 Tahun Pengabdian", contribution: "Pengarsipan arsip sejarah, manajemen korespondensi publik." },
-    { id: "gita", name: "Gita Ayu Agustin, S.Pd", role: "Bendahara Pengurus Inti", bio: "Pendidik yang mengawasi arus keuangan, transparansi dana hibah, dan pendaftaran siswa beasiswa gratis.", dedication: "6 Tahun Pengabdian", contribution: "Tata kelola anggaran pelatihan, pengawasan transparansi donasi." }
+    { id: "roro-pengurus", name: "Roro Riwayatiningsih, S.Pd", role: "Sekretaris Pengurus Inti", bio: "Tenaga administrasi yang menyusun agenda latihan, registrasi anggota, dan dokumentasi rapat, sekaligus menjembatani koordinasi dengan Dewan Adat.", dedication: "15 Tahun Pengabdian", contribution: "Pengarsipan arsip sejarah, manajemen korespondensi publik." },
+    { id: "wini", name: "Wini Kumaidah, S.Tr Keb", role: "Bendahara Pengurus Inti", bio: "Tenaga profesional yang mengawasi arus keuangan, transparansi dana hibah, dan pendaftaran siswa beasiswa gratis.", dedication: "5 Tahun Pengabdian", contribution: "Tata kelola anggaran pelatihan, pengawasan transparansi donasi." }
   ],
   dewanPakar: [
     { id: "gunaris", name: "Gunaris, S.T., MBA, MSc-Fin., CFA, CEM.", role: "Ketua Dewan Pakar", bio: "Ahli ekonomi keuangan dan keberlanjutan yang memformulasikan model kemandirian finansial pariwisata cagar budaya.", dedication: "7 Tahun Pengabdian", contribution: "Analisis studi kelayakan ekonomi kreatif, perencanaan dana abadi." },
@@ -192,7 +191,7 @@ const orgStructureData = {
     { id: "dwi", name: "Dwi Prasetyo, SE", role: "Bendahara Dewan Adat", bio: "Pecinta pusaka keris yang merawat perlengkapan sesaji dan ornamen tata rias penari adat.", dedication: "10 Tahun Pengabdian", contribution: "Inventarisasi kostum, penyediaan logistik sesaji." },
     { id: "widayat", name: "Widayat", role: "Anggota Dewan Adat", bio: "Pemain kendang senior pengiring irama mistis Jaranan.", dedication: "15 Tahun Pengabdian", contribution: "Pelatihan ketukan kendang slendro." },
     { id: "subagyo", name: "Subagyo", role: "Anggota Dewan Adat", bio: "Sesepuh pembuat topeng Yakso dari kayu pule pilihan.", dedication: "18 Tahun Pengabdian", contribution: "Penyediaan topeng pahat tangan bagi penari cilik." },
-    { id: "paryanto", name: "Paryanto", role: "Anggota Dewan Adat", bio: "Dalang wayang purwa yang membina kelompok pedalangan anak-anak.", dedication: "12 Tahun Pengabdian", contribution: "Bimbingan suluk catur pedalangan." },
+    { id: "paryatno", name: "Paryatno", role: "Anggota Dewan Adat", bio: "Dalang wayang purwa yang membina kelompok pedalangan anak-anak.", dedication: "12 Tahun Pengabdian", contribution: "Bimbingan suluk catur pedalangan." },
     { id: "sutarman", name: "Sutarman", role: "Anggota Dewan Adat", bio: "Penjaga fisik cagar Rumah Adat Jawa di Watulimo.", dedication: "10 Tahun Pengabdian", contribution: "Perawatan harian struktur kayu kuno." },
     { id: "edi", name: "Edi Sunanto", role: "Anggota Dewan Adat", bio: "Pengrajin wayang kulit dari kulit kerbau asli.", dedication: "14 Tahun Pengabdian", contribution: "Pelatihan menatah dan menyungging wayang." },
     { id: "budi", name: "Budi Karyanto", role: "Anggota Dewan Adat", bio: "Pemain gamelan spesialis instrumen pencon besar (Gong).", dedication: "12 Tahun Pengabdian", contribution: "Penyelarasan irama tempo lancaran." },
@@ -205,7 +204,7 @@ const orgStructureData = {
 };
 
 const culturalUnits = [
-  { id: "pedalangan", name: "Pendalangan", img: "pentas-wayang-kulit.jpg", desc: "Pelatihan seni pewayangan komprehensif, meliputi teknik memegang wayang (sabetan), intonasi suara (catur/suluk), dan filsafat lakon carangan Jawa.", members: "45 Cantrik", schedule: "Sabtu, 15.00 - 18.00 WIB", instructor: "Paryanto", achievements: "Juara 1 Dalang Bocah Jawa Timur 2024" },
+  { id: "pedalangan", name: "Pendalangan", img: "pentas-wayang-kulit.jpg", desc: "Pelatihan seni pewayangan komprehensif, meliputi teknik memegang wayang (sabetan), intonasi suara (catur/suluk), dan filsafat lakon carangan Jawa.", members: "45 Cantrik", schedule: "Sabtu, 15.00 - 18.00 WIB", instructor: "Paryatno", achievements: "Juara 1 Dalang Bocah Jawa Timur 2024" },
   { id: "rumahadat", name: "Rumah Adat", img: "https://images.unsplash.com/photo-1605647540924-852290f6b0d5?q=80&w=600&auto=format&fit=crop", desc: "Pelestarian dan edukasi arsitektur tradisional Joglo Sinom Watulimo yang dibangun tanpa menggunakan paku besi, memamerkan kearifan sipil kuno.", members: "Umum", schedule: "Setiap Hari, 08.00 - 16.00 WIB", instructor: "Sutarman", achievements: "Cagar Budaya Tersertifikasi Provinsi" },
   { id: "perpustakaan", name: "Perpustakaan Budaya", img: "https://images.unsplash.com/photo-1507842217343-583bb7270b66?q=80&w=600&auto=format&fit=crop", desc: "Ruang baca khusus koleksi naskah rontal, babad kuno, kamus Jawa-Kuno, serta dokumentasi visual upacara adat Trenggalek.", members: "120+ Anggota", schedule: "Selasa - Minggu, 09.00 - 15.00 WIB", instructor: "Ayu Lucky Setiani", achievements: "Arsip Digital Terlengkap se-Trenggalek" },
   { id: "jaranan", name: "Jaranan Turonggo Yakso", img: "https://images.unsplash.com/photo-1590073844006-33379778ae09?q=80&w=600&auto=format&fit=crop", desc: "Seni tari khas Trenggalek yang melambangkan kemenangann kesadaran spiritual manusia atas nafsu angkara murka raksasa (Yakso).", members: "150 Penari", schedule: "Minggu, 09.00 - 12.00 WIB", instructor: "Bambang Sudewo, S.Pd", achievements: "Penyaji Terbaik Festival Jaranan Nasional" },
