@@ -1196,6 +1196,7 @@ a {
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  padding: 24px 0;
 }
 
 .milestone-watermark-year {
@@ -1226,6 +1227,15 @@ html.light-theme .milestone-watermark-year {
   animation: fadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
   position: relative;
   z-index: 2;
+}
+
+.milestone-detail-image {
+  width: 100%;
+  max-width: 420px;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 1px solid var(--border-glass);
 }
 
 .milestone-card-year {

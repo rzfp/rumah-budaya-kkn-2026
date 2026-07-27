@@ -156,11 +156,9 @@ const translations = {
 // 2. DATA ARRAYS AND CONFIGURATIONS
 
 const milestones = [
-  { year: "1998", title: "Pendopo Pertama", desc: "Didirikan dengan memanfaatkan kayu jati bekas kapal laut kuno, sebagai wadah awal latihan karawitan pemuda Watulimo." },
-  { year: "2005", title: "Revitalisasi Turonggo Yakso", desc: "Mulai mengkodifikasi koreografi tari khas Jaranan Turonggo Yakso agar tidak punah dimakan modernisasi." },
-  { year: "2012", title: "Penghargaan Cagar Budaya", desc: "Menerima plakat penghargaan dari Dinas Pendidikan & Kebudayaan Kabupaten Trenggalek atas kontribusi pelestarian." },
-  { year: "2020", title: "Digitalisasi Manuskrip", desc: "Meluncurkan program pengarsipan digital foto manuskrip kuno Jaranan dan sastra pedalangan." },
-  { year: "2026", title: "Museum Imersif Digital", desc: "Membangun media visual modern, widget sensorik, dan interaksi portal web Rumah Budaya Watulimo." }
+  { year: "2017", title: "Pendopo Pertama", img: "pendopo-2017.jpg", desc: "Rumah Budaya Watulimo dirintis dari sebuah pendopo kayu sederhana, menjadi wadah awal bagi warga Watulimo untuk berlatih tari, karawitan, dan pedalangan." },
+  { year: "2024", title: "Revitalisasi & Pengakuan Budaya", img: "pendopo-2024.jpg", desc: "Pendopo direvitalisasi dan berkembang menjadi pusat kegiatan budaya yang lebih lengkap, mulai dikenal luas dan mendapat dukungan dari berbagai pihak." },
+  { year: "Sekarang", title: "Pusat Warisan Budaya Nasional", img: "pendopo-sekarang.jpg", desc: "Rumah Budaya Watulimo kini menjadi pusat pelestarian budaya yang diakui di kancah nasional, lengkap dengan program digitalisasi dan edukasi budaya." }
 ];
 
 const orgStructureData = {
@@ -207,7 +205,7 @@ const orgStructureData = {
 };
 
 const culturalUnits = [
-  { id: "pedalangan", name: "Pendalangan", img: "https://images.unsplash.com/photo-1578926288207-a90a5366759d?q=80&w=600&auto=format&fit=crop", desc: "Pelatihan seni pewayangan komprehensif, meliputi teknik memegang wayang (sabetan), intonasi suara (catur/suluk), dan filsafat lakon carangan Jawa.", members: "45 Cantrik", schedule: "Sabtu, 15.00 - 18.00 WIB", instructor: "Paryanto", achievements: "Juara 1 Dalang Bocah Jawa Timur 2024" },
+  { id: "pedalangan", name: "Pendalangan", img: "pentas-wayang-kulit.jpg", desc: "Pelatihan seni pewayangan komprehensif, meliputi teknik memegang wayang (sabetan), intonasi suara (catur/suluk), dan filsafat lakon carangan Jawa.", members: "45 Cantrik", schedule: "Sabtu, 15.00 - 18.00 WIB", instructor: "Paryanto", achievements: "Juara 1 Dalang Bocah Jawa Timur 2024" },
   { id: "rumahadat", name: "Rumah Adat", img: "https://images.unsplash.com/photo-1605647540924-852290f6b0d5?q=80&w=600&auto=format&fit=crop", desc: "Pelestarian dan edukasi arsitektur tradisional Joglo Sinom Watulimo yang dibangun tanpa menggunakan paku besi, memamerkan kearifan sipil kuno.", members: "Umum", schedule: "Setiap Hari, 08.00 - 16.00 WIB", instructor: "Sutarman", achievements: "Cagar Budaya Tersertifikasi Provinsi" },
   { id: "perpustakaan", name: "Perpustakaan Budaya", img: "https://images.unsplash.com/photo-1507842217343-583bb7270b66?q=80&w=600&auto=format&fit=crop", desc: "Ruang baca khusus koleksi naskah rontal, babad kuno, kamus Jawa-Kuno, serta dokumentasi visual upacara adat Trenggalek.", members: "120+ Anggota", schedule: "Selasa - Minggu, 09.00 - 15.00 WIB", instructor: "Ayu Lucky Setiani", achievements: "Arsip Digital Terlengkap se-Trenggalek" },
   { id: "jaranan", name: "Jaranan Turonggo Yakso", img: "https://images.unsplash.com/photo-1590073844006-33379778ae09?q=80&w=600&auto=format&fit=crop", desc: "Seni tari khas Trenggalek yang melambangkan kemenangann kesadaran spiritual manusia atas nafsu angkara murka raksasa (Yakso).", members: "150 Penari", schedule: "Minggu, 09.00 - 12.00 WIB", instructor: "Bambang Sudewo, S.Pd", achievements: "Penyaji Terbaik Festival Jaranan Nasional" },
@@ -236,12 +234,13 @@ const achievementsData = [
 
 const galleryData = [
   { img: "https://images.unsplash.com/photo-1590073844006-33379778ae09?q=80&w=600&auto=format&fit=crop", title: "Atraksi Jaranan Turonggo Yakso", cat: "jaranan", desc: "Penari melompati api melambangkan penaklukan nafsu amarah raksasa.", year: "2024" },
-  { img: "https://images.unsplash.com/photo-1578926288207-a90a5366759d?q=80&w=600&auto=format&fit=crop", title: "Pentas Wayang Kulit Semalam Suntuk", cat: "wayang", desc: "Lakon Wahyu Makutarama dibawakan oleh dalang binaan Rumah Budaya.", year: "2023" },
+  { img: "pentas-wayang-kulit.jpg", title: "Pentas Wayang Kulit Semalam Suntuk", cat: "wayang", desc: "Lakon Wahyu Makutarama dibawakan oleh dalang binaan Rumah Budaya.", year: "2023" },
   { img: "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?q=80&w=600&auto=format&fit=crop", title: "Gladhi Karawitan Kiai Guntur Sari", cat: "karawitan", desc: "Anak-anak belajar melafalkan ketukan saron slendro secara presisi.", year: "2024" },
   { img: "https://images.unsplash.com/photo-1605647540924-852290f6b0d5?q=80&w=600&auto=format&fit=crop", title: "Struktur Joglo Utama Rumah Budaya", cat: "events", desc: "Pendopo agung yang dirawat secara berkala tanpa paku.", year: "2025" },
   { img: "https://images.unsplash.com/photo-1496747611176-843222e1e57c?q=80&w=600&auto=format&fit=crop", title: "Canting Batik Watulimohan", desc: "Proses menggambar lilin malam bermotif cengkeh pesisiran.", cat: "craft", year: "2024" },
   { img: "https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?q=80&w=600&auto=format&fit=crop", title: "Tari Persembahan Selo Gangsal", cat: "dance", desc: "Koreografi halus menyambut tamu kehormatan dari pariwisata nasional.", year: "2023" },
-  { img: "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?q=80&w=600&auto=format&fit=crop", title: "Kelas Unggah-Ungguh Basa Jawi", cat: "training", desc: "Siswa berlatih krama inggil dalam interaksi sosial sehari-hari.", year: "2024" }
+  { img: "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?q=80&w=600&auto=format&fit=crop", title: "Kelas Unggah-Ungguh Basa Jawi", cat: "training", desc: "Siswa berlatih krama inggil dalam interaksi sosial sehari-hari.", year: "2024" },
+  { img: "situs-sela-gangsal.jpg", title: "Situs Sela Gangsal - Legenda Lima Batu", cat: "history", desc: "Lima batu purba yang menjadi asal-usul nama Desa Watulimo, dipercaya sebagai penanda batas mistis kerajaan Jawa.", year: "2025" }
 ];
 
 // ==========================================================================
@@ -658,6 +657,13 @@ function selectMilestoneIndex(index) {
     document.getElementById("milestone-active-title").innerText = item.title;
     document.getElementById("milestone-active-desc").innerText = item.desc;
     document.getElementById("milestone-active-index").innerText = index + 1;
+    const imgEl = document.getElementById("milestone-active-image");
+    if (imgEl && item.img) {
+      imgEl.src = item.img;
+      imgEl.alt = item.title;
+    }
+    const totalEl = document.getElementById("milestone-total-count");
+    if (totalEl) totalEl.innerText = totalItems;
     viewport.style.opacity = 1;
   }, 150);
 }
@@ -1094,7 +1100,7 @@ function initGallery() {
   if (!gridContainer) return;
 
   // Render filter buttons
-  const categories = ["all", "jaranan", "wayang", "karawitan", "dance", "craft", "training"];
+  const categories = ["all", "jaranan", "wayang", "karawitan", "dance", "craft", "training", "history"];
   const catNames = { all: "Semua", jaranan: "Jaranan", wayang: "Wayang", karawitan: "Karawitan", dance: "Tari", craft: "Batik", training: "Pelatihan" };
 
   categories.forEach(cat => {
@@ -1466,7 +1472,7 @@ function compilePrintablePDF() {
   
   let contentHTML = `
     <div style="text-align:center; margin-bottom: 20px;">
-      <img src="logo.jpg" alt="Logo" style="height: 120px; filter: grayscale(100%);" />
+      <img src="logo.png" alt="Logo" style="height: 120px; filter: grayscale(100%);" />
     </div>
     <h1>LAPORAN PROFIL PERUSAHAAN</h1>
     <h2 style="text-align:center;">RUMAH BUDAYA WATULIMO</h2>
@@ -1476,7 +1482,7 @@ function compilePrintablePDF() {
     <p>Rumah Budaya Watulimo merupakan pusat pelestarian, dokumentasi sejarah, dan pengajaran kearifan lokal Jaranan Turonggo Yakso, Karawitan, Wayang Kulit, Seni Pesisiran, dan Batik Pesisir di Kecamatan Watulimo, Trenggalek.</p>
     
     <h2>2. Babad Sejarah Desa & Milestone Rumah Budaya</h2>
-    <p>Desa Watulimo berawal dari legenda Sela Gangsal (lima batu pembatas spiritual Jawa). Sebagai wilayah cagar adat pesisir, Rumah Budaya didirikan tahun 1998 untuk melestarikan keaslian tari Jaranan Turonggo Yakso dan gending-gending kelautan.</p>
+    <p>Desa Watulimo berawal dari legenda Sela Gangsal (lima batu pembatas spiritual Jawa). Sebagai wilayah cagar adat pesisir, Rumah Budaya didirikan tahun 2017 untuk melestarikan keaslian tari Jaranan Turonggo Yakso dan gending-gending kelautan.</p>
     <ul>
   `;
   milestones.forEach(m => {
