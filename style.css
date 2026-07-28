@@ -1921,6 +1921,26 @@ html.light-theme .milestone-watermark-year {
   gap: 10px;
 }
 
+.award-row-card__img-wrap {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  border-radius: 6px;
+  margin-bottom: 4px;
+}
+
+.award-row-card__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.award-row-card:hover .award-row-card__img {
+  transform: scale(1.05);
+}
+
 .award-row-card h5 {
   font-size: 0.85rem;
   color: var(--color-gold);

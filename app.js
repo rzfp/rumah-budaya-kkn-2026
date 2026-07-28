@@ -216,7 +216,11 @@ const eventsData = [
 const achievementsData = [
   { title: "Status Warisan Budaya Nasional", level: "Nasional", year: "2024", result: "Sertifikasi Cagar Budaya", doc: "Kementerian Pendidikan, Kebudayaan, Riset, dan Teknologi RI" },
   { title: "Juara Umum Festival Jaranan Jawa Timur", level: "Provinsi", year: "2023", result: "Juara Umum & Koreografer Terbaik", doc: "Dinas Kebudayaan & Pariwisata Provinsi Jatim" },
-  { title: "Kategori Wisata Budaya Terbaik", level: "Kabupaten", year: "2022", result: "Juara 1 Trenggalek Tourism Awards", doc: "Pemerintah Kabupaten Trenggalek" }
+  { title: "Kategori Wisata Budaya Terbaik", level: "Kabupaten", year: "2022", result: "Juara 1 Trenggalek Tourism Awards", doc: "Pemerintah Kabupaten Trenggalek" },
+  { title: "Juara 1 Tari Tradisional se-Asia", level: "Internasional", year: "2023", result: "Juara 1 Kategori Tari Tradisional", doc: "Kompetisi Seni Tradisional se-Asia", img: "images/prestasi-juara-asia.jpg" },
+  { title: "Apresiasi Program Anti Narkoba", level: "Kabupaten", year: "-", result: "Penghargaan Kerjasama Kampanye Stop Narkoba", doc: "Badan Narkotika Nasional (BNN) Kabupaten Trenggalek", img: "images/prestasi-penghargaan-bnn.jpg" },
+  { title: "Tokoh Teladan Kampanye Stop Narkoba", level: "Kabupaten", year: "2018", result: "Piagam Penghargaan untuk Andri Sudarsono, S.A.", doc: "BNN Kabupaten Trenggalek", img: "images/prestasi-tokoh-teladan-2018.jpg" },
+  { title: "Tokoh Teladan Kampanye Stop Narkoba", level: "Kabupaten", year: "2019", result: "Piagam Penghargaan untuk Andri Sudarsono, S.A.", doc: "BNN Kabupaten Trenggalek", img: "images/prestasi-tokoh-teladan-2019.jpg" }
 ];
 
 const pusakaGalleryData = [
@@ -1000,7 +1004,11 @@ function initAchievements() {
   achievementsData.forEach(aw => {
     const card = document.createElement("div");
     card.className = "award-row-card glass-panel";
+    const imgHtml = aw.img
+      ? `<div class="award-row-card__img-wrap"><img class="award-row-card__img" src="${aw.img}" alt="${aw.title}" loading="lazy"></div>`
+      : "";
     card.innerHTML = `
+      ${imgHtml}
       <h5>${aw.level} // ${aw.year}</h5>
       <h4 class="serif-text">${aw.title}</h4>
       <p>${aw.result}</p>
@@ -1019,7 +1027,7 @@ function initAchievements() {
 
     if (pos < screenHeight && !triggered) {
       triggered = true;
-      animateNumber("stats-awards", 15);
+      animateNumber("stats-awards", 19);
       animateNumber("stats-years", 10);
       animateNumber("stats-members", 300);
       
