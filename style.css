@@ -2587,21 +2587,37 @@ html.light-theme .milestone-watermark-year {
   gap: 8px;
 }
 
-.share-btn-mock {
+.share-btn-mock,
+.share-icon-btn {
   background: transparent;
   border: 1px solid var(--border-glass);
-  color: var(--text-secondary);
-  padding: 6px 12px;
-  border-radius: 4px;
   cursor: pointer;
-  font-size: 0.75rem;
   transition: all var(--transition-fast);
 }
 
-.share-btn-mock:hover {
+.share-icon-btn {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  padding: 0;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+}
+
+.share-icon-btn img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.share-icon-btn:hover {
   border-color: var(--color-gold);
-  color: var(--color-gold);
-  background: rgba(var(--color-gold-rgb), 0.05);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.35);
 }
 
 .footer-bottom-row {

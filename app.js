@@ -273,6 +273,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initPusakaCarousel();
   initGallery();
   initContactAndMap();
+  initShareButtons();
   initGlobalControls();
   
   // Set default profile show
@@ -1313,6 +1314,55 @@ window.submitContactForm = function() {
     container.style.opacity = 1;
   }, 300);
 };
+
+// ==========================================================================
+// 11b. SOCIAL MEDIA SHARE PORTAL BUTTONS
+// ==========================================================================
+
+function initShareButtons() {
+  const pageUrl = window.location.href;
+  const shareText = "Kunjungi Rumah Budaya Watulimo - Pusat Pelestarian Budaya Trenggalek";
+
+  const shareActions = {
+    whatsapp: () => {
+      window.open(`https://api.whatsapp.com/send?text=${encodeURIComponent(shareText + " " + pageUrl)}`, "_blank");
+    },
+    facebook: () => {
+      window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(pageUrl)}`, "_blank");
+    },
+    x: () => {
+      window.open(`https://twitter.com/intent/tweet?url=${encodeURIComponent(pageUrl)}&text=${encodeURIComponent(shareText)}`, "_blank");
+    },
+    instagram: () => {
+      // Instagram has no web share-by-URL intent; copy the link then open Instagram
+      copyLinkThenOpen(pageUrl, "https://www.instagram.com/");
+    },
+    tiktok: () => {
+      // TikTok has no web share-by-URL intent; copy the link then open TikTok
+      copyLinkThenOpen(pageUrl, "https://www.tiktok.com/");
+    }
+  };
+
+  document.querySelectorAll(".share-icon-btn").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const platform = btn.dataset.platform;
+      if (shareActions[platform]) shareActions[platform]();
+    });
+  });
+}
+
+function copyLinkThenOpen(link, appUrl) {
+  const finish = () => {
+    alert("Tautan portal telah disalin! Silakan tempel (paste) di postingan, story, atau bio Anda.");
+    window.open(appUrl, "_blank");
+  };
+
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(link).then(finish).catch(finish);
+  } else {
+    finish();
+  }
+}
 
 // ==========================================================================
 // 12. GLOBAL CONTROLS & COMPACT SEARCH OVERLAY
