@@ -1939,6 +1939,121 @@ html.light-theme .milestone-watermark-year {
 }
 
 /* ==========================================================================
+   9b. PUSAKA KERIS STANDALONE AUTO-SLIDE CAROUSEL
+   ========================================================================== */
+
+.pusaka-carousel-block {
+  padding: 40px;
+  border-radius: 16px;
+  margin-bottom: 50px;
+}
+
+.pusaka-carousel-heading {
+  margin-bottom: 24px;
+}
+
+.pusaka-carousel-heading h3 {
+  font-size: 1.8rem;
+  color: var(--color-gold);
+  margin-bottom: 6px;
+}
+
+.subtitle-sm {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+}
+
+.pusaka-carousel {
+  position: relative;
+  width: 100%;
+  border-radius: 14px;
+  overflow: hidden;
+  aspect-ratio: 16 / 9;
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-glass);
+}
+
+.pusaka-carousel-track {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  transition: transform var(--transition-medium);
+}
+
+.pusaka-slide {
+  flex: 0 0 100%;
+  width: 100%;
+  height: 100%;
+}
+
+.pusaka-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.pusaka-carousel-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid var(--border-glass-active);
+  background: var(--bg-glass);
+  color: var(--color-gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: var(--transition-fast);
+  backdrop-filter: blur(6px);
+  z-index: 2;
+}
+
+.pusaka-carousel-nav:hover {
+  background: var(--bg-glass-active);
+  border-color: var(--color-gold);
+}
+
+.pusaka-carousel-nav.prev { left: 16px; }
+.pusaka-carousel-nav.next { right: 16px; }
+
+.pusaka-carousel-dots {
+  position: absolute;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+  z-index: 2;
+}
+
+.pusaka-carousel-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  border: 1px solid var(--color-gold);
+  background: transparent;
+  cursor: pointer;
+  padding: 0;
+  transition: var(--transition-fast);
+}
+
+.pusaka-carousel-dot.active {
+  background: var(--color-gold);
+  width: 22px;
+  border-radius: 5px;
+}
+
+@media (max-width: 768px) {
+  .pusaka-carousel-block { padding: 24px; }
+  .pusaka-carousel { aspect-ratio: 4 / 3; }
+  .pusaka-carousel-nav { width: 36px; height: 36px; }
+}
+
+/* ==========================================================================
    10. MASONRY GALLERY & LIGHTBOX
    ========================================================================== */
 

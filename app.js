@@ -219,6 +219,18 @@ const achievementsData = [
   { title: "Kategori Wisata Budaya Terbaik", level: "Kabupaten", year: "2022", result: "Juara 1 Trenggalek Tourism Awards", doc: "Pemerintah Kabupaten Trenggalek" }
 ];
 
+const pusakaGalleryData = [
+  { img: "img/pusaka/keris-1.jpg", title: "Pusaka Keris Rumah Budaya Watulimo" },
+  { img: "img/pusaka/keris-2.jpg", title: "Pusaka Keris Rumah Budaya Watulimo" },
+  { img: "img/pusaka/keris-3.jpg", title: "Pusaka Keris Rumah Budaya Watulimo" },
+  { img: "img/pusaka/keris-4.jpg", title: "Pusaka Keris Rumah Budaya Watulimo" },
+  { img: "img/pusaka/keris-5.jpg", title: "Pusaka Keris Rumah Budaya Watulimo" },
+  { img: "img/pusaka/keris-6.jpg", title: "Pusaka Keris Rumah Budaya Watulimo" },
+  { img: "img/pusaka/keris-7.jpg", title: "Pusaka Keris Rumah Budaya Watulimo" },
+  { img: "img/pusaka/keris-8.jpg", title: "Pusaka Keris Rumah Budaya Watulimo" },
+  { img: "img/pusaka/keris-9.jpg", title: "Pusaka Keris Rumah Budaya Watulimo" }
+];
+
 const galleryData = [
   { img: "https://images.unsplash.com/photo-1590073844006-33379778ae09?q=80&w=600&auto=format&fit=crop", title: "Atraksi Jaranan Turonggo Yakso", cat: "jaranan", desc: "Penari melompati api melambangkan penaklukan nafsu amarah raksasa.", year: "2024" },
   { img: "pentas-wayang-kulit.jpg", title: "Pentas Wayang Kulit Semalam Suntuk", cat: "wayang", desc: "Lakon Wahyu Makutarama dibawakan oleh dalang binaan Rumah Budaya.", year: "2023" },
@@ -254,6 +266,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initCulturalUnits();
   initEventsAndCountdown();
   initAchievements();
+  initPusakaCarousel();
   initGallery();
   initContactAndMap();
   initGlobalControls();
@@ -1036,6 +1049,85 @@ function animateNumber(elementId, targetValue, duration = 1200) {
       elem.innerText = start;
     }
   }, safeStepTime);
+}
+
+// ==========================================================================
+// 9b. PUSAKA KERIS STANDALONE AUTO-SLIDE CAROUSEL
+// ==========================================================================
+
+function initPusakaCarousel() {
+  const track = document.getElementById("pusaka-carousel-track");
+  const dotsRow = document.getElementById("pusaka-carousel-dots");
+  const prevBtn = document.getElementById("pusaka-carousel-prev");
+  const nextBtn = document.getElementById("pusaka-carousel-next");
+  const carouselEl = document.getElementById("pusaka-carousel");
+  if (!track || !pusakaGalleryData.length) return;
+
+  let currentIndex = 0;
+  let autoplayTimer = null;
+  const AUTOPLAY_DELAY = 4000;
+
+  // Build slides
+  track.innerHTML = pusakaGalleryData.map((item, i) => `
+    <div class="pusaka-slide" data-index="${i}">
+      <img src="${item.img}" alt="${item.title}" loading="${i === 0 ? "eager" : "lazy"}" />
+    </div>
+  `).join("");
+
+  // Build dots
+  dotsRow.innerHTML = pusakaGalleryData.map((_, i) => `
+    <button class="pusaka-carousel-dot${i === 0 ? " active" : ""}" data-index="${i}" aria-label="Slide ${i + 1}"></button>
+  `).join("");
+
+  const dots = dotsRow.querySelectorAll(".pusaka-carousel-dot");
+
+  function goToSlide(index) {
+    currentIndex = (index + pusakaGalleryData.length) % pusakaGalleryData.length;
+    track.style.transform = `translateX(-${currentIndex * 100}%)`;
+    dots.forEach((dot, i) => dot.classList.toggle("active", i === currentIndex));
+  }
+
+  function nextSlide() { goToSlide(currentIndex + 1); }
+  function prevSlide() { goToSlide(currentIndex - 1); }
+
+  function startAutoplay() {
+    stopAutoplay();
+    autoplayTimer = setInterval(nextSlide, AUTOPLAY_DELAY);
+  }
+  function stopAutoplay() {
+    if (autoplayTimer) clearInterval(autoplayTimer);
+  }
+
+  prevBtn.addEventListener("click", () => { prevSlide(); startAutoplay(); });
+  nextBtn.addEventListener("click", () => { nextSlide(); startAutoplay(); });
+  dots.forEach(dot => {
+    dot.addEventListener("click", () => {
+      goToSlide(parseInt(dot.dataset.index, 10));
+      startAutoplay();
+    });
+  });
+
+  // Pause on hover / touch, resume on leave
+  carouselEl.addEventListener("mouseenter", stopAutoplay);
+  carouselEl.addEventListener("mouseleave", startAutoplay);
+
+  // Basic swipe support for mobile
+  let touchStartX = 0;
+  carouselEl.addEventListener("touchstart", (e) => {
+    touchStartX = e.touches[0].clientX;
+    stopAutoplay();
+  }, { passive: true });
+  carouselEl.addEventListener("touchend", (e) => {
+    const touchEndX = e.changedTouches[0].clientX;
+    const diff = touchStartX - touchEndX;
+    if (Math.abs(diff) > 40) {
+      diff > 0 ? nextSlide() : prevSlide();
+    }
+    startAutoplay();
+  }, { passive: true });
+
+  goToSlide(0);
+  startAutoplay();
 }
 
 // ==========================================================================
