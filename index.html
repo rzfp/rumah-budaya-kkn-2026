@@ -245,14 +245,15 @@
           <div class="widget-card glass-card">
             <div class="weather-widget-header">
               <h4 class="serif-text">Watulimo Live Weather</h4>
-              <div class="weather-icon-sun">☀️</div>
+              <div class="weather-icon-sun" id="weather-icon">☀️</div>
             </div>
             <div class="weather-details">
-              <span class="temp-val" id="weather-temp">29°C</span>
-              <span class="weather-desc">Cerah Berawan / Marine Breeze</span>
+              <span class="temp-val" id="weather-temp">--°C</span>
+              <span class="weather-desc" id="weather-desc">Memuat data cuaca...</span>
             </div>
             <div class="weather-meta">
               <code>COORD // 8.2709° S, 111.7214° E</code>
+              <code id="weather-updated" class="weather-updated-time"></code>
             </div>
           </div>
 

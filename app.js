@@ -274,6 +274,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initGallery();
   initContactAndMap();
   initShareButtons();
+  initLiveWeather();
   initGlobalControls();
   
   // Set default profile show
@@ -1036,6 +1037,75 @@ function initAchievements() {
       animateNumber("visitor-count-number", 24532, 2000);
     }
   });
+}
+
+// ==========================================================================
+// 9c. LIVE WEATHER WIDGET (REAL-TIME, OPEN-METEO API)
+// ==========================================================================
+
+function initLiveWeather() {
+  const tempEl = document.getElementById("weather-temp");
+  const descEl = document.getElementById("weather-desc");
+  const iconEl = document.getElementById("weather-icon");
+  const updatedEl = document.getElementById("weather-updated");
+  if (!tempEl) return;
+
+  // Coordinates of Rumah Budaya Watulimo
+  const LAT = -8.2709;
+  const LON = 111.7214;
+  const API_URL = `https://api.open-meteo.com/v1/forecast?latitude=${LAT}&longitude=${LON}&current_weather=true&timezone=auto`;
+
+  // WMO Weather interpretation codes -> [icon emoji, Indonesian description]
+  const weatherCodeMap = {
+    0: ["☀️", "Cerah"],
+    1: ["🌤️", "Cerah Berawan"],
+    2: ["⛅", "Berawan Sebagian"],
+    3: ["☁️", "Mendung"],
+    45: ["🌫️", "Berkabut"],
+    48: ["🌫️", "Kabut Beku"],
+    51: ["🌦️", "Gerimis Ringan"],
+    53: ["🌦️", "Gerimis Sedang"],
+    55: ["🌦️", "Gerimis Lebat"],
+    61: ["🌧️", "Hujan Ringan"],
+    63: ["🌧️", "Hujan Sedang"],
+    65: ["🌧️", "Hujan Lebat"],
+    71: ["🌨️", "Salju Ringan"],
+    80: ["🌦️", "Hujan Lokal"],
+    81: ["🌧️", "Hujan Lokal Sedang"],
+    82: ["⛈️", "Hujan Lokal Lebat"],
+    95: ["⛈️", "Badai Petir"],
+    96: ["⛈️", "Badai Petir & Hujan Es"],
+    99: ["⛈️", "Badai Petir Kuat"]
+  };
+
+  fetch(API_URL)
+    .then(res => {
+      if (!res.ok) throw new Error("Weather API error");
+      return res.json();
+    })
+    .then(data => {
+      const cw = data.current_weather;
+      if (!cw) throw new Error("No current_weather in response");
+
+      const [icon, desc] = weatherCodeMap[cw.weathercode] || ["🌡️", "Kondisi Tidak Diketahui"];
+      const isNight = cw.is_day === 0;
+
+      tempEl.textContent = `${Math.round(cw.temperature)}°C`;
+      descEl.textContent = `${desc} / Marine Breeze`;
+      if (iconEl) iconEl.textContent = isNight && cw.weathercode <= 1 ? "🌙" : icon;
+
+      if (updatedEl) {
+        const now = new Date(cw.time);
+        const hh = String(now.getHours()).padStart(2, "0");
+        const mm = String(now.getMinutes()).padStart(2, "0");
+        updatedEl.textContent = `UPDATED ${hh}:${mm} WIB`;
+      }
+    })
+    .catch(() => {
+      // Graceful fallback if the API is unreachable
+      tempEl.textContent = "N/A";
+      descEl.textContent = "Data cuaca tidak tersedia saat ini";
+    });
 }
 
 function animateNumber(elementId, targetValue, duration = 1200) {

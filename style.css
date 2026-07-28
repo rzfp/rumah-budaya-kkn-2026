@@ -1004,10 +1004,20 @@ a {
   color: var(--text-secondary);
 }
 
+.weather-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
 .weather-meta code {
   font-size: 0.75rem;
   color: var(--text-tertiary);
   letter-spacing: 0.05em;
+}
+
+.weather-updated-time {
+  opacity: 0.7;
 }
 
 .visitor-widget {
