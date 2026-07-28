@@ -163,12 +163,13 @@ const milestones = [
 
 const orgStructureData = {
   penanggungJawab: [
-    { id: "bupati", name: "Bupati dan Wakil Bupati Kabupaten Trenggalek", role: "Penanggung Jawab", bio: "Pimpinan tertinggi pemerintahan daerah Kabupaten Trenggalek yang mengayomi seluruh inisiatif pelestarian budaya lokal.", dedication: "Sejak menjabat", contribution: "State sponsorship, kebijakan pelestarian, pendanaan hibah pariwisata." },
-    { id: "camat", name: "Camat Kecamatan Watulimo", role: "Penanggung Jawab", bio: "Kepala pemerintahan Kecamatan Watulimo yang mengoordinasikan koordinasi antar-instansi daerah.", dedication: "Sejak menjabat", contribution: "Fasilitator perizinan pentas seni pesisir, promosi wisata kecamatan." },
-    { id: "kades", name: "Kepala Desa Watulimo", role: "Penanggung Jawab", bio: "Kepala desa Watulimo yang mengalokasikan dana desa untuk operasional fisik Rumah Budaya Watulimo.", dedication: "Sejak menjabat", contribution: "Pemberdayaan sanggar desa, fasilitator sarana Pendopo." }
+    { id: "bupati", name: "H. Mochamad Nur Arifin, S.E., M.PSDM.", role: "Bupati Trenggalek", img: "foto-bupati.jpg", bio: "Pimpinan tertinggi pemerintahan daerah Kabupaten Trenggalek yang mengayomi seluruh inisiatif pelestarian budaya lokal.", dedication: "Sejak menjabat", contribution: "State sponsorship, kebijakan pelestarian, pendanaan hibah pariwisata." },
+    { id: "wabup", name: "Syah Muhammad Natanegara, S.H.", role: "Wakil Bupati Trenggalek", img: "foto-wakil-bupati.jpg", bio: "Wakil pimpinan pemerintahan daerah Kabupaten Trenggalek yang mendampingi Bupati dalam mengawal program pelestarian budaya.", dedication: "Sejak menjabat", contribution: "Pendampingan kebijakan pelestarian, koordinasi lintas dinas." },
+    { id: "camat", name: "Camat Kecamatan Watulimo", role: "Penanggung Jawab", img: "foto-camat.jpg", bio: "Kepala pemerintahan Kecamatan Watulimo yang mengoordinasikan koordinasi antar-instansi daerah.", dedication: "Sejak menjabat", contribution: "Fasilitator perizinan pentas seni pesisir, promosi wisata kecamatan." },
+    { id: "kades", name: "Edy Sunanto, S.Pd", role: "Kepala Desa Watulimo", img: "foto-kepala-desa.jpg", bio: "Kepala desa Watulimo yang mengalokasikan dana desa untuk operasional fisik Rumah Budaya Watulimo.", dedication: "Sejak menjabat", contribution: "Pemberdayaan sanggar desa, fasilitator sarana Pendopo." }
   ],
   pengurusInti: [
-    { id: "andri", name: "Andri Sudarsono, SA", role: "Ketua Pengurus Inti", bio: "Pemimpin visioner penggerak pemuda Watulimo yang mengelola operasional harian seluruh unit kebudayaan.", dedication: "8 Tahun Pengabdian", contribution: "Digitalisasi museum, manajemen kurator, koordinator kemitraan internasional." },
+    { id: "andri", name: "Andri Sudarsono, SA", role: "Ketua Pengurus Inti", img: "foto-andri.jpg", bio: "Pemimpin visioner penggerak pemuda Watulimo yang mengelola operasional harian seluruh unit kebudayaan.", dedication: "8 Tahun Pengabdian", contribution: "Digitalisasi museum, manajemen kurator, koordinator kemitraan internasional." },
     { id: "roro-pengurus", name: "Roro Riwayatiningsih, S.Pd", role: "Sekretaris Pengurus Inti", bio: "Tenaga administrasi yang menyusun agenda latihan, registrasi anggota, dan dokumentasi rapat, sekaligus menjembatani koordinasi dengan Dewan Adat.", dedication: "15 Tahun Pengabdian", contribution: "Pengarsipan arsip sejarah, manajemen korespondensi publik." },
     { id: "wini", name: "Wini Kumaidah, S.Tr Keb", role: "Bendahara Pengurus Inti", bio: "Tenaga profesional yang mengawasi arus keuangan, transparansi dana hibah, dan pendaftaran siswa beasiswa gratis.", dedication: "5 Tahun Pengabdian", contribution: "Tata kelola anggaran pelatihan, pengawasan transparansi donasi." }
   ],
@@ -670,7 +671,7 @@ function initOrgTreeChart() {
   orgStructureData.penanggungJawab.forEach(node => {
     treeHTML += `
       <div class="tree-card-node" data-profile-id="${node.id}">
-        <h5>Penanggung Jawab</h5>
+        <h5>${node.role}</h5>
         <h4>${node.name}</h4>
       </div>
     `;
@@ -769,11 +770,14 @@ function selectProfileNode(profileId) {
     viewPort.innerHTML = `
       <div class="profile-bio-card glass-panel">
         <div class="bio-avatar-side">
-          <div class="bio-avatar-placeholder">
-            <svg class="avatar-silhouette-svg" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
-            </svg>
-          </div>
+          ${profile.img
+            ? `<img src="${profile.img}" alt="${profile.name}" class="bio-avatar-photo" />`
+            : `<div class="bio-avatar-placeholder">
+                <svg class="avatar-silhouette-svg" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+                </svg>
+              </div>`
+          }
           <span class="bio-dedication-tag">${profile.dedication}</span>
         </div>
         <div class="bio-text-side">
