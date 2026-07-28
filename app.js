@@ -1239,55 +1239,29 @@ window.closeLightbox = function() {
 // ==========================================================================
 
 function initContactAndMap() {
-  // Render custom interactive coordinate vector map
+  // Render real embedded Google Maps for the venue location
   const mapViewport = document.getElementById("location-map-viewport");
   if (mapViewport) {
+    const mapAddress = "Rumah Budaya Watulimo, Jl. Raya Bandung Prigi, Watulimo, Kec. Watulimo, Kabupaten Trenggalek, Jawa Timur 66382";
+    const mapQuery = encodeURIComponent(mapAddress);
+    const mapsEmbedUrl = `https://maps.google.com/maps?q=${mapQuery}&z=15&output=embed`;
+    const mapsDirectUrl = `https://www.google.com/maps/search/?api=1&query=${mapQuery}`;
+
     mapViewport.innerHTML = `
-      <svg viewBox="0 0 400 300" class="map-svg-frame" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <radialGradient id="oceanGrad" cx="50%" cy="50%" r="50%">
-            <stop offset="0%" stop-color="#121820" />
-            <stop offset="100%" stop-color="#0a0807" />
-          </radialGradient>
-        </defs>
-        <!-- Background coordinate grid represent coastal ocean -->
-        <rect width="100%" height="100%" fill="url(#oceanGrad)" />
-        <path d="M 0,250 Q 150,220 280,240 T 400,280 L 400,300 L 0,300 Z" fill="#182c18" opacity="0.3" /> <!-- Coast outline -->
-        
-        <!-- Grid overlay lines -->
-        <line x1="50" y1="0" x2="50" y2="300" stroke="rgba(200, 164, 77, 0.05)" />
-        <line x1="150" y1="0" x2="150" y2="300" stroke="rgba(200, 164, 77, 0.05)" />
-        <line x1="250" y1="0" x2="250" y2="300" stroke="rgba(200, 164, 77, 0.05)" />
-        <line x1="350" y1="0" x2="350" y2="300" stroke="rgba(200, 164, 77, 0.05)" />
-        <line x1="0" y1="100" x2="400" y2="100" stroke="rgba(200, 164, 77, 0.05)" />
-        <line x1="0" y1="200" x2="400" y2="200" stroke="rgba(200, 164, 77, 0.05)" />
-
-        <!-- Roads lines representation -->
-        <path d="M 50,0 Q 80,100 120,180 T 260,250" fill="none" stroke="rgba(200, 164, 77, 0.15)" stroke-width="2" />
-        <path d="M 0,150 Q 120,130 220,170 T 360,280" fill="none" stroke="rgba(200, 164, 77, 0.1)" stroke-width="1.5" />
-        
-        <!-- Pulsing Marker for Rumah Budaya Watulimo -->
-        <g transform="translate(220, 170)" style="cursor:pointer;" onclick="alert('Rumah Budaya Watulimo\nCoordinates: 8.2709° S, 111.7214° E')">
-          <circle r="14" fill="rgba(200, 164, 77, 0.15)">
-            <animate attributeName="r" values="8;18;8" dur="3s" repeatCount="indefinite" />
-          </circle>
-          <circle r="6" fill="var(--accent-maroon)" />
-          <circle r="3" fill="var(--color-gold)" />
-          <text x="12" y="4" fill="var(--color-gold)" font-family="Cinzel" font-size="8" font-weight="bold">RBW MAIN PENDOPO</text>
-        </g>
-
-        <!-- Marker for Pantai Prigi -->
-        <g transform="translate(260, 250)">
-          <circle r="3" fill="var(--color-gold)" />
-          <text x="8" y="2" fill="var(--text-tertiary)" font-size="6">Prigi Traditional Port</text>
-        </g>
-
-        <!-- Marker for Pantai Karanggongso -->
-        <g transform="translate(360, 280)">
-          <circle r="3" fill="var(--color-gold)" />
-          <text x="-60" y="-4" fill="var(--text-tertiary)" font-size="6">Karanggongso Beach</text>
-        </g>
-      </svg>
+      <iframe
+        class="gmap-embed-frame"
+        src="${mapsEmbedUrl}"
+        width="100%"
+        height="100%"
+        style="border:0;"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        title="Lokasi Rumah Budaya Watulimo di Google Maps">
+      </iframe>
+      <a class="gmap-open-btn" href="${mapsDirectUrl}" target="_blank" rel="noopener noreferrer">
+        📍 Buka di Google Maps
+      </a>
     `;
   }
 
