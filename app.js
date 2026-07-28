@@ -163,28 +163,14 @@ const milestones = [
 
 const orgStructureData = {
   penanggungJawab: [
-    { id: "bupati", name: "H. Mochamad Nur Arifin, S.E., M.PSDM.", role: "Penanggung Jawab (Bupati)", bio: "Pimpinan tertinggi pemerintahan daerah Kabupaten Trenggalek yang mengayomi seluruh inisiatif pelestarian budaya lokal.", dedication: "Sejak menjabat", contribution: "State sponsorship, kebijakan pelestarian, pendanaan hibah pariwisata.", img: "img/bupati.jpg" },
-    { id: "wabup", name: "Syah Muhammad Natanegara, S.H.", role: "Penanggung Jawab (Wakil Bupati)", bio: "Wakil pimpinan pemerintahan daerah yang menyelaraskan pariwisata budaya dengan kesejahteraan desa.", dedication: "Sejak menjabat", contribution: "Penyelarasan program kerja dinas pariwisata, monitoring cagar budaya.", img: "img/wabup.jpg" },
-    { id: "camat", name: "Camat Kecamatan Watulimo", role: "Penanggung Jawab (Camat)", bio: "Kepala pemerintahan Kecamatan Watulimo yang mengoordinasikan koordinasi antar-instansi daerah.", dedication: "Sejak menjabat", contribution: "Fasilitator perizinan pentas seni pesisir, promosi wisata kecamatan.", img: "img/camat.jpg" },
-    { id: "kades", name: "Edy Sunanto, S.Pd.", role: "Penanggung Jawab (Kepala Desa)", bio: "Kepala desa Watulimo yang mengalokasikan dana desa untuk operasional fisik Rumah Budaya Watulimo.", dedication: "Sejak menjabat", contribution: "Pemberdayaan sanggar desa, fasilitator sarana Pendopo.", img: "img/kades.jpg" }
-  ],
-  dewanPenasehat: [
-    { id: "ridwan", name: "Ir. H. M. Ridwan Hisjam", role: "Ketua Dewan Penasehat", bio: "Tokoh nasional senior dan pemerhati budaya yang membina arah strategis jangka panjang Rumah Budaya.", dedication: "10 Tahun Pengabdian", contribution: "Koneksi jejaring nasional, pembina visi kebudayaan, bantuan fasilitas." }
+    { id: "bupati", name: "Bupati dan Wakil Bupati Kabupaten Trenggalek", role: "Penanggung Jawab", bio: "Pimpinan tertinggi pemerintahan daerah Kabupaten Trenggalek yang mengayomi seluruh inisiatif pelestarian budaya lokal.", dedication: "Sejak menjabat", contribution: "State sponsorship, kebijakan pelestarian, pendanaan hibah pariwisata." },
+    { id: "camat", name: "Camat Kecamatan Watulimo", role: "Penanggung Jawab", bio: "Kepala pemerintahan Kecamatan Watulimo yang mengoordinasikan koordinasi antar-instansi daerah.", dedication: "Sejak menjabat", contribution: "Fasilitator perizinan pentas seni pesisir, promosi wisata kecamatan." },
+    { id: "kades", name: "Kepala Desa Watulimo", role: "Penanggung Jawab", bio: "Kepala desa Watulimo yang mengalokasikan dana desa untuk operasional fisik Rumah Budaya Watulimo.", dedication: "Sejak menjabat", contribution: "Pemberdayaan sanggar desa, fasilitator sarana Pendopo." }
   ],
   pengurusInti: [
-    { id: "andri", name: "Andri Sudarsono, SA", role: "Ketua Pengurus Inti", bio: "Pemimpin visioner penggerak pemuda Watulimo yang mengelola operasional harian seluruh unit kebudayaan.", dedication: "8 Tahun Pengabdian", contribution: "Digitalisasi museum, manajemen kurator, koordinator kemitraan internasional.", img: "img/andri.jpg" },
-    { id: "ayu", name: "Ayu Lucky Setiani", role: "Sekretaris Pengurus Inti", bio: "Tenaga administrasi ahli yang menyusun agenda latihan, registrasi anggota, dan dokumentasi rapat.", dedication: "5 Tahun Pengabdian", contribution: "Pengarsipan arsip sejarah, manajemen korespondensi publik." },
-    { id: "gita", name: "Gita Ayu Agustin, S.Pd", role: "Bendahara Pengurus Inti", bio: "Pendidik yang mengawasi arus keuangan, transparansi dana hibah, dan pendaftaran siswa beasiswa gratis.", dedication: "6 Tahun Pengabdian", contribution: "Tata kelola anggaran pelatihan, pengawasan transparansi donasi." }
-  ],
-  dewanPakar: [
-    { id: "gunaris", name: "Gunaris, S.T., MBA, MSc-Fin., CFA, CEM.", role: "Ketua Dewan Pakar", bio: "Ahli ekonomi keuangan dan keberlanjutan yang memformulasikan model kemandirian finansial pariwisata cagar budaya.", dedication: "7 Tahun Pengabdian", contribution: "Analisis studi kelayakan ekonomi kreatif, perencanaan dana abadi." },
-    { id: "firman", name: "Dr. H. Firman Arifin, ST, MT.", role: "Anggota Dewan Pakar", bio: "Akademisi bidang teknik instrumentasi yang mendukung riset digitalisasi suara gamelan dan multimedia imersif.", dedication: "4 Tahun Pengabdian", contribution: "Konsultasi teknologi audio-visual virtual tour." },
-    { id: "munta", name: "Dr. H. M. Muntahibun Nafis, MA.", role: "Anggota Dewan Pakar", bio: "Akademisi kebudayaan yang mengkaji makna filosofis luhur di balik ritus spiritual Larung Sembonyo.", dedication: "5 Tahun Pengabdian", contribution: "Penerbitan jurnal riset kebudayaan lokal Watulimo." },
-    { id: "ibnu", name: "Dr. H. Ibnu Burdah, MA.", role: "Anggota Dewan Pakar", bio: "Pakar sejarah antropologi yang mendalami silsilah migrasi leluhur Watulimo dan pengaruh kerajaan Mataram.", dedication: "5 Tahun Pengabdian", contribution: "Kurasi narasi sejarah Babad Watulimo." },
-    { id: "andy", name: "Ir. Andy Widiatmoko, MSc.", role: "Anggota Dewan Pakar", bio: "Insinyur perencanaan wilayah tata kota yang membantu zonasi pengembangan Rumah Budaya sebagai destinasi internasional.", dedication: "6 Tahun Pengabdian", contribution: "Zonasi fisik cagar budaya, lanskap arsitektur hijau." },
-    { id: "arif", name: "Arif Budiono, S.T", role: "Anggota Dewan Pakar", bio: "Pakar sistem informasi yang merancang implementasi server database cagar budaya lokal.", dedication: "3 Tahun Pengabdian", contribution: "Infrastruktur cloud arsip digital." },
-    { id: "iin", name: "Iin Budiono, S.T", role: "Anggota Dewan Pakar", bio: "Praktisi teknik sipil pengawas kekuatan struktur bangunan joglo cagar budaya.", dedication: "3 Tahun Pengabdian", contribution: "Restorasi kayu pendopo penahan gempa." },
-    { id: "gunawan", name: "Gunawan Wibisono, S.T", role: "Anggota Dewan Pakar", bio: "Pakar kelistrikan dan otomasi yang menyusun sistem pencahayaan artistik galeri pameran.", dedication: "4 Tahun Pengabdian", contribution: "Pencahayaan terarah lampu sorot shadow play." }
+    { id: "andri", name: "Andri Sudarsono, SA", role: "Ketua Pengurus Inti", bio: "Pemimpin visioner penggerak pemuda Watulimo yang mengelola operasional harian seluruh unit kebudayaan.", dedication: "8 Tahun Pengabdian", contribution: "Digitalisasi museum, manajemen kurator, koordinator kemitraan internasional." },
+    { id: "roro-pengurus", name: "Roro Riwayatiningsih, S.Pd", role: "Sekretaris Pengurus Inti", bio: "Tenaga administrasi yang menyusun agenda latihan, registrasi anggota, dan dokumentasi rapat, sekaligus menjembatani koordinasi dengan Dewan Adat.", dedication: "15 Tahun Pengabdian", contribution: "Pengarsipan arsip sejarah, manajemen korespondensi publik." },
+    { id: "wini", name: "Wini Kumaidah, S.Tr Keb", role: "Bendahara Pengurus Inti", bio: "Tenaga profesional yang mengawasi arus keuangan, transparansi dana hibah, dan pendaftaran siswa beasiswa gratis.", dedication: "5 Tahun Pengabdian", contribution: "Tata kelola anggaran pelatihan, pengawasan transparansi donasi." }
   ],
   dewanAdat: [
     { id: "bambang", name: "Bambang Sudewo, S.Pd", role: "Ketua Dewan Adat", bio: "Sesepuh adat karismatik watulimo pelatih agung Jaranan Turonggo Yakso yang menjaga orisinalitas pakem ritual.", dedication: "20+ Tahun Pengabdian", contribution: "Penyusunan modul koreografi Turonggo Yakso, pemandu ritual." },
@@ -192,7 +178,7 @@ const orgStructureData = {
     { id: "dwi", name: "Dwi Prasetyo, SE", role: "Bendahara Dewan Adat", bio: "Pecinta pusaka keris yang merawat perlengkapan sesaji dan ornamen tata rias penari adat.", dedication: "10 Tahun Pengabdian", contribution: "Inventarisasi kostum, penyediaan logistik sesaji." },
     { id: "widayat", name: "Widayat", role: "Anggota Dewan Adat", bio: "Pemain kendang senior pengiring irama mistis Jaranan.", dedication: "15 Tahun Pengabdian", contribution: "Pelatihan ketukan kendang slendro." },
     { id: "subagyo", name: "Subagyo", role: "Anggota Dewan Adat", bio: "Sesepuh pembuat topeng Yakso dari kayu pule pilihan.", dedication: "18 Tahun Pengabdian", contribution: "Penyediaan topeng pahat tangan bagi penari cilik." },
-    { id: "paryanto", name: "Paryanto", role: "Anggota Dewan Adat", bio: "Dalang wayang purwa yang membina kelompok pedalangan anak-anak.", dedication: "12 Tahun Pengabdian", contribution: "Bimbingan suluk catur pedalangan." },
+    { id: "paryatno", name: "Paryatno", role: "Anggota Dewan Adat", bio: "Dalang wayang purwa yang membina kelompok pedalangan anak-anak.", dedication: "12 Tahun Pengabdian", contribution: "Bimbingan suluk catur pedalangan." },
     { id: "sutarman", name: "Sutarman", role: "Anggota Dewan Adat", bio: "Penjaga fisik cagar Rumah Adat Jawa di Watulimo.", dedication: "10 Tahun Pengabdian", contribution: "Perawatan harian struktur kayu kuno." },
     { id: "edi", name: "Edi Sunanto", role: "Anggota Dewan Adat", bio: "Pengrajin wayang kulit dari kulit kerbau asli.", dedication: "14 Tahun Pengabdian", contribution: "Pelatihan menatah dan menyungging wayang." },
     { id: "budi", name: "Budi Karyanto", role: "Anggota Dewan Adat", bio: "Pemain gamelan spesialis instrumen pencon besar (Gong).", dedication: "12 Tahun Pengabdian", contribution: "Penyelarasan irama tempo lancaran." },
@@ -205,7 +191,7 @@ const orgStructureData = {
 };
 
 const culturalUnits = [
-  { id: "pedalangan", name: "Pendalangan", img: "pentas-wayang-kulit.jpg", desc: "Pelatihan seni pewayangan komprehensif, meliputi teknik memegang wayang (sabetan), intonasi suara (catur/suluk), dan filsafat lakon carangan Jawa.", members: "45 Cantrik", schedule: "Sabtu, 15.00 - 18.00 WIB", instructor: "Paryanto", achievements: "Juara 1 Dalang Bocah Jawa Timur 2024" },
+  { id: "pedalangan", name: "Pendalangan", img: "pentas-wayang-kulit.jpg", desc: "Pelatihan seni pewayangan komprehensif, meliputi teknik memegang wayang (sabetan), intonasi suara (catur/suluk), dan filsafat lakon carangan Jawa.", members: "45 Cantrik", schedule: "Sabtu, 15.00 - 18.00 WIB", instructor: "Paryatno", achievements: "Juara 1 Dalang Bocah Jawa Timur 2024" },
   { id: "rumahadat", name: "Rumah Adat", img: "https://images.unsplash.com/photo-1605647540924-852290f6b0d5?q=80&w=600&auto=format&fit=crop", desc: "Pelestarian dan edukasi arsitektur tradisional Joglo Sinom Watulimo yang dibangun tanpa menggunakan paku besi, memamerkan kearifan sipil kuno.", members: "Umum", schedule: "Setiap Hari, 08.00 - 16.00 WIB", instructor: "Sutarman", achievements: "Cagar Budaya Tersertifikasi Provinsi" },
   { id: "perpustakaan", name: "Perpustakaan Budaya", img: "https://images.unsplash.com/photo-1507842217343-583bb7270b66?q=80&w=600&auto=format&fit=crop", desc: "Ruang baca khusus koleksi naskah rontal, babad kuno, kamus Jawa-Kuno, serta dokumentasi visual upacara adat Trenggalek.", members: "120+ Anggota", schedule: "Selasa - Minggu, 09.00 - 15.00 WIB", instructor: "Ayu Lucky Setiani", achievements: "Arsip Digital Terlengkap se-Trenggalek" },
   { id: "jaranan", name: "Jaranan Turonggo Yakso", img: "https://images.unsplash.com/photo-1590073844006-33379778ae09?q=80&w=600&auto=format&fit=crop", desc: "Seni tari khas Trenggalek yang melambangkan kemenangann kesadaran spiritual manusia atas nafsu angkara murka raksasa (Yakso).", members: "150 Penari", schedule: "Minggu, 09.00 - 12.00 WIB", instructor: "Bambang Sudewo, S.Pd", achievements: "Penyaji Terbaik Festival Jaranan Nasional" },
@@ -230,18 +216,6 @@ const achievementsData = [
   { title: "Status Warisan Budaya Nasional", level: "Nasional", year: "2024", result: "Sertifikasi Cagar Budaya", doc: "Kementerian Pendidikan, Kebudayaan, Riset, dan Teknologi RI" },
   { title: "Juara Umum Festival Jaranan Jawa Timur", level: "Provinsi", year: "2023", result: "Juara Umum & Koreografer Terbaik", doc: "Dinas Kebudayaan & Pariwisata Provinsi Jatim" },
   { title: "Kategori Wisata Budaya Terbaik", level: "Kabupaten", year: "2022", result: "Juara 1 Trenggalek Tourism Awards", doc: "Pemerintah Kabupaten Trenggalek" }
-];
-
-const pusakaGalleryData = [
-  { img: "img/pusaka/keris-1.jpg", title: "Pusaka Keris Rumah Budaya Watulimo" },
-  { img: "img/pusaka/keris-2.jpg", title: "Pusaka Keris Rumah Budaya Watulimo" },
-  { img: "img/pusaka/keris-3.jpg", title: "Pusaka Keris Rumah Budaya Watulimo" },
-  { img: "img/pusaka/keris-4.jpg", title: "Pusaka Keris Rumah Budaya Watulimo" },
-  { img: "img/pusaka/keris-5.jpg", title: "Pusaka Keris Rumah Budaya Watulimo" },
-  { img: "img/pusaka/keris-6.jpg", title: "Pusaka Keris Rumah Budaya Watulimo" },
-  { img: "img/pusaka/keris-7.jpg", title: "Pusaka Keris Rumah Budaya Watulimo" },
-  { img: "img/pusaka/keris-8.jpg", title: "Pusaka Keris Rumah Budaya Watulimo" },
-  { img: "img/pusaka/keris-9.jpg", title: "Pusaka Keris Rumah Budaya Watulimo" }
 ];
 
 const galleryData = [
@@ -279,7 +253,6 @@ document.addEventListener("DOMContentLoaded", () => {
   initCulturalUnits();
   initEventsAndCountdown();
   initAchievements();
-  initPusakaCarousel();
   initGallery();
   initContactAndMap();
   initGlobalControls();
@@ -689,7 +662,7 @@ function initOrgTreeChart() {
   const treeContainer = document.getElementById("hierarchy-tree-chart");
   if (!treeContainer) return;
 
-  // Build tree chart layers: Penanggung Jawab -> Dewan Penasehat -> Pengurus Inti -> Pakar & Adat Row
+  // Build tree chart layers: Penanggung Jawab -> Pengurus Inti -> Dewan Adat Row
   let treeHTML = `
     <!-- Layer 1: Penanggung Jawab -->
     <div class="tree-row">
@@ -707,23 +680,7 @@ function initOrgTreeChart() {
     
     <div class="tree-connector-v"></div>
 
-    <!-- Layer 2: Dewan Penasehat -->
-    <div class="tree-row">
-  `;
-  orgStructureData.dewanPenasehat.forEach(node => {
-    treeHTML += `
-      <div class="tree-card-node" data-profile-id="${node.id}">
-        <h5>${node.role}</h5>
-        <h4>${node.name}</h4>
-      </div>
-    `;
-  });
-  treeHTML += `
-    </div>
-
-    <div class="tree-connector-v"></div>
-
-    <!-- Layer 3: Pengurus Inti -->
+    <!-- Layer 2: Pengurus Inti -->
     <div class="tree-row">
   `;
   orgStructureData.pengurusInti.forEach(node => {
@@ -739,13 +696,8 @@ function initOrgTreeChart() {
 
     <div class="tree-connector-v"></div>
 
-    <!-- Layer 4: Expandable Headers for Dewan Pakar and Dewan Adat -->
+    <!-- Layer 3: Expandable Header for Dewan Adat -->
     <div class="tree-row" style="gap: 80px;">
-      <div class="tree-card-node" id="pakar-expand-btn">
-        <h5>Dewan Penasehat Keahlian</h5>
-        <h4>Dewan Pakar</h4>
-        <span style="font-size: 0.68rem; color: var(--text-tertiary);">Click to view members (${orgStructureData.dewanPakar.length})</span>
-      </div>
       <div class="tree-card-node" id="adat-expand-btn">
         <h5>Mpu Kebudayaan</h5>
         <h4>Dewan Adat</h4>
@@ -753,27 +705,12 @@ function initOrgTreeChart() {
       </div>
     </div>
 
-    <!-- Expandable Pakar Row -->
-    <div class="tree-connector-v pakar-row-node hide"></div>
-    <div class="tree-row hide pakar-row-node" style="flex-wrap: wrap; max-width: 900px; gap: 12px;" id="pakar-nodes-container"></div>
-
     <!-- Expandable Adat Row -->
     <div class="tree-connector-v adat-row-node hide"></div>
     <div class="tree-row hide adat-row-node" style="flex-wrap: wrap; max-width: 900px; gap: 12px;" id="adat-nodes-container"></div>
   `;
 
   treeContainer.innerHTML = treeHTML;
-
-  // Render pakar members inside container
-  const pakarContainer = document.getElementById("pakar-nodes-container");
-  orgStructureData.dewanPakar.forEach(node => {
-    pakarContainer.innerHTML += `
-      <div class="tree-card-node" data-profile-id="${node.id}" style="padding: 10px 14px; min-width: 150px;">
-        <h5>${node.role}</h5>
-        <h4>${node.name}</h4>
-      </div>
-    `;
-  });
 
   // Render adat members inside container
   const adatContainer = document.getElementById("adat-nodes-container");
@@ -784,12 +721,6 @@ function initOrgTreeChart() {
         <h4>${node.name}</h4>
       </div>
     `;
-  });
-
-  // Bind Pakar Expand click
-  document.getElementById("pakar-expand-btn").addEventListener("click", () => {
-    document.querySelectorAll(".pakar-row-node").forEach(el => el.classList.toggle("hide"));
-    document.getElementById("pakar-expand-btn").classList.toggle("active");
   });
 
   // Bind Adat Expand click
@@ -839,12 +770,9 @@ function selectProfileNode(profileId) {
       <div class="profile-bio-card glass-panel">
         <div class="bio-avatar-side">
           <div class="bio-avatar-placeholder">
-            ${profile.img
-              ? `<img class="bio-avatar-photo" src="${profile.img}" alt="Foto ${profile.name}" onerror="this.parentElement.innerHTML='<svg class=&quot;avatar-silhouette-svg&quot; viewBox=&quot;0 0 24 24&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;><path d=&quot;M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z&quot;/></svg>'" />`
-              : `<svg class="avatar-silhouette-svg" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
-                </svg>`
-            }
+            <svg class="avatar-silhouette-svg" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+            </svg>
           </div>
           <span class="bio-dedication-tag">${profile.dedication}</span>
         </div>
@@ -1104,85 +1032,6 @@ function animateNumber(elementId, targetValue, duration = 1200) {
       elem.innerText = start;
     }
   }, safeStepTime);
-}
-
-// ==========================================================================
-// 9b. PUSAKA KERIS STANDALONE AUTO-SLIDE CAROUSEL
-// ==========================================================================
-
-function initPusakaCarousel() {
-  const track = document.getElementById("pusaka-carousel-track");
-  const dotsRow = document.getElementById("pusaka-carousel-dots");
-  const prevBtn = document.getElementById("pusaka-carousel-prev");
-  const nextBtn = document.getElementById("pusaka-carousel-next");
-  const carouselEl = document.getElementById("pusaka-carousel");
-  if (!track || !pusakaGalleryData.length) return;
-
-  let currentIndex = 0;
-  let autoplayTimer = null;
-  const AUTOPLAY_DELAY = 4000;
-
-  // Build slides
-  track.innerHTML = pusakaGalleryData.map((item, i) => `
-    <div class="pusaka-slide" data-index="${i}">
-      <img src="${item.img}" alt="${item.title}" loading="${i === 0 ? "eager" : "lazy"}" />
-    </div>
-  `).join("");
-
-  // Build dots
-  dotsRow.innerHTML = pusakaGalleryData.map((_, i) => `
-    <button class="pusaka-carousel-dot${i === 0 ? " active" : ""}" data-index="${i}" aria-label="Slide ${i + 1}"></button>
-  `).join("");
-
-  const dots = dotsRow.querySelectorAll(".pusaka-carousel-dot");
-
-  function goToSlide(index) {
-    currentIndex = (index + pusakaGalleryData.length) % pusakaGalleryData.length;
-    track.style.transform = `translateX(-${currentIndex * 100}%)`;
-    dots.forEach((dot, i) => dot.classList.toggle("active", i === currentIndex));
-  }
-
-  function nextSlide() { goToSlide(currentIndex + 1); }
-  function prevSlide() { goToSlide(currentIndex - 1); }
-
-  function startAutoplay() {
-    stopAutoplay();
-    autoplayTimer = setInterval(nextSlide, AUTOPLAY_DELAY);
-  }
-  function stopAutoplay() {
-    if (autoplayTimer) clearInterval(autoplayTimer);
-  }
-
-  prevBtn.addEventListener("click", () => { prevSlide(); startAutoplay(); });
-  nextBtn.addEventListener("click", () => { nextSlide(); startAutoplay(); });
-  dots.forEach(dot => {
-    dot.addEventListener("click", () => {
-      goToSlide(parseInt(dot.dataset.index, 10));
-      startAutoplay();
-    });
-  });
-
-  // Pause on hover / touch, resume on leave
-  carouselEl.addEventListener("mouseenter", stopAutoplay);
-  carouselEl.addEventListener("mouseleave", startAutoplay);
-
-  // Basic swipe support for mobile
-  let touchStartX = 0;
-  carouselEl.addEventListener("touchstart", (e) => {
-    touchStartX = e.touches[0].clientX;
-    stopAutoplay();
-  }, { passive: true });
-  carouselEl.addEventListener("touchend", (e) => {
-    const touchEndX = e.changedTouches[0].clientX;
-    const diff = touchStartX - touchEndX;
-    if (Math.abs(diff) > 40) {
-      diff > 0 ? nextSlide() : prevSlide();
-    }
-    startAutoplay();
-  }, { passive: true });
-
-  goToSlide(0);
-  startAutoplay();
 }
 
 // ==========================================================================
@@ -1490,12 +1339,9 @@ function initGlobalControls() {
         searchModal.classList.add("hide");
         if (m.link === "#profiles") {
           // If it was a profile, make sure it is selected in tree
-          const matchProfile = orgStructureData.penanggungJawab.concat(orgStructureData.dewanPenasehat, orgStructureData.pengurusInti, orgStructureData.dewanPakar, orgStructureData.dewanAdat).find(p => p.name === m.label);
+          const matchProfile = orgStructureData.penanggungJawab.concat(orgStructureData.pengurusInti, orgStructureData.dewanAdat).find(p => p.name === m.label);
           if (matchProfile) {
-            // Expand pakar/adat rows if they clicked one
-            if (orgStructureData.dewanPakar.some(p => p.id === matchProfile.id)) {
-              document.querySelectorAll(".pakar-row-node").forEach(el => el.classList.remove("hide"));
-            }
+            // Expand adat row if they clicked one of its members
             if (orgStructureData.dewanAdat.some(p => p.id === matchProfile.id)) {
               document.querySelectorAll(".adat-row-node").forEach(el => el.classList.remove("hide"));
             }
@@ -1590,9 +1436,6 @@ function compilePrintablePDF() {
     <ul>
   `;
   orgStructureData.penanggungJawab.forEach(p => {
-    contentHTML += `<li><strong>${p.role}:</strong> ${p.name} (Dedikasi: ${p.dedication})</li>`;
-  });
-  orgStructureData.dewanPenasehat.forEach(p => {
     contentHTML += `<li><strong>${p.role}:</strong> ${p.name} (Dedikasi: ${p.dedication})</li>`;
   });
   orgStructureData.pengurusInti.forEach(p => {
