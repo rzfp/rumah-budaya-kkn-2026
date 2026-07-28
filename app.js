@@ -220,15 +220,15 @@ const achievementsData = [
 ];
 
 const pusakaGalleryData = [
-  { img: "img/pusaka/keris-1.jpg", title: "Pusaka Keris Rumah Budaya Watulimo" },
-  { img: "img/pusaka/keris-2.jpg", title: "Pusaka Keris Rumah Budaya Watulimo" },
-  { img: "img/pusaka/keris-3.jpg", title: "Pusaka Keris Rumah Budaya Watulimo" },
-  { img: "img/pusaka/keris-4.jpg", title: "Pusaka Keris Rumah Budaya Watulimo" },
-  { img: "img/pusaka/keris-5.jpg", title: "Pusaka Keris Rumah Budaya Watulimo" },
-  { img: "img/pusaka/keris-6.jpg", title: "Pusaka Keris Rumah Budaya Watulimo" },
-  { img: "img/pusaka/keris-7.jpg", title: "Pusaka Keris Rumah Budaya Watulimo" },
-  { img: "img/pusaka/keris-8.jpg", title: "Pusaka Keris Rumah Budaya Watulimo" },
-  { img: "img/pusaka/keris-9.jpg", title: "Pusaka Keris Rumah Budaya Watulimo" }
+  { img: "keris-1.jpg", title: "Pusaka Keris Rumah Budaya Watulimo" },
+  { img: "keris-2.jpg", title: "Pusaka Keris Rumah Budaya Watulimo" },
+  { img: "keris-3.jpg", title: "Pusaka Keris Rumah Budaya Watulimo" },
+  { img: "keris-4.jpg", title: "Pusaka Keris Rumah Budaya Watulimo" },
+  { img: "keris-5.jpg", title: "Pusaka Keris Rumah Budaya Watulimo" },
+  { img: "keris-6.jpg", title: "Pusaka Keris Rumah Budaya Watulimo" },
+  { img: "keris-7.jpg", title: "Pusaka Keris Rumah Budaya Watulimo" },
+  { img: "keris-8.jpg", title: "Pusaka Keris Rumah Budaya Watulimo" },
+  { img: "keris-9.jpg", title: "Pusaka Keris Rumah Budaya Watulimo" }
 ];
 
 const galleryData = [
