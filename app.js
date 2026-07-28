@@ -232,13 +232,13 @@ const pusakaGalleryData = [
 ];
 
 const galleryData = [
-  { img: "https://images.unsplash.com/photo-1590073844006-33379778ae09?q=80&w=600&auto=format&fit=crop", title: "Atraksi Jaranan Turonggo Yakso", cat: "jaranan", desc: "Penari melompati api melambangkan penaklukan nafsu amarah raksasa.", year: "2024" },
+  { img: "jaranan-turonggo-yakso.jpg", title: "Atraksi Jaranan Turonggo Yakso", cat: "jaranan", desc: "Penari melompati api melambangkan penaklukan nafsu amarah raksasa.", year: "2024" },
   { img: "pentas-wayang-kulit.jpg", title: "Pentas Wayang Kulit Semalam Suntuk", cat: "wayang", desc: "Lakon Wahyu Makutarama dibawakan oleh dalang binaan Rumah Budaya.", year: "2023" },
-  { img: "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?q=80&w=600&auto=format&fit=crop", title: "Gladhi Karawitan Kiai Guntur Sari", cat: "karawitan", desc: "Anak-anak belajar melafalkan ketukan saron slendro secara presisi.", year: "2024" },
-  { img: "https://images.unsplash.com/photo-1605647540924-852290f6b0d5?q=80&w=600&auto=format&fit=crop", title: "Struktur Joglo Utama Rumah Budaya", cat: "events", desc: "Pendopo agung yang dirawat secara berkala tanpa paku.", year: "2025" },
-  { img: "https://images.unsplash.com/photo-1496747611176-843222e1e57c?q=80&w=600&auto=format&fit=crop", title: "Canting Batik Watulimohan", desc: "Proses menggambar lilin malam bermotif cengkeh pesisiran.", cat: "craft", year: "2024" },
-  { img: "https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?q=80&w=600&auto=format&fit=crop", title: "Tari Persembahan Selo Gangsal", cat: "dance", desc: "Koreografi halus menyambut tamu kehormatan dari pariwisata nasional.", year: "2023" },
-  { img: "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?q=80&w=600&auto=format&fit=crop", title: "Kelas Unggah-Ungguh Basa Jawi", cat: "training", desc: "Siswa berlatih krama inggil dalam interaksi sosial sehari-hari.", year: "2024" },
+  { img: "karawitan-guntur-sari.jpg", title: "Gladhi Karawitan Kiai Guntur Sari", cat: "karawitan", desc: "Anak-anak belajar melafalkan ketukan saron slendro secara presisi.", year: "2024" },
+  { img: "struktur-joglo.jpg", title: "Struktur Joglo Utama Rumah Budaya", cat: "events", desc: "Pendopo agung yang dirawat secara berkala tanpa paku.", year: "2025" },
+  { img: "canting-batik-watulimo.jpg", title: "Canting Batik Watulimohan", desc: "Proses menggambar lilin malam bermotif cengkeh pesisiran.", cat: "craft", year: "2024" },
+  { img: "tari-persembahan.jpg", title: "Tari Persembahan Selo Gangsal", cat: "dance", desc: "Koreografi halus menyambut tamu kehormatan dari pariwisata nasional.", year: "2023" },
+  { img: "kelas-unggah-ungguh.jpg", title: "Kelas Unggah-Ungguh Basa Jawi", cat: "training", desc: "Siswa berlatih krama inggil dalam interaksi sosial sehari-hari.", year: "2024" },
   { img: "situs-sela-gangsal.jpg", title: "Situs Sela Gangsal - Legenda Lima Batu", cat: "history", desc: "Lima batu purba yang menjadi asal-usul nama Desa Watulimo, dipercaya sebagai penanda batas mistis kerajaan Jawa.", year: "2025" }
 ];
 
